@@ -59,8 +59,8 @@ if (Tools::getValue('transform-points') == 'true' AND $customerPoints > 0) {
     if (Configuration::get('PS_ORDER_RETURN'))
         $dateFrom += 60 * 60 * 24 * (int)Configuration::get('PS_ORDER_RETURN_NB_DAYS');
 
-    $cartRule->date_from = date('Y-m-d H:i:s', $dateFrom);
-    $cartRule->date_to = date('Y-m-d H:i:s', $dateFrom + 31536000); // + 1 year
+    $cartRule->date_from = date('Y-m-d H:i:s', time());
+    $cartRule->date_to = date('Y-m-d H:i:s', time() + 31536000); // + 1 year
 
     $cartRule->minimum_amount = (float)Configuration::get('PS_LOYALTY_MINIMAL');
     $cartRule->active = 1;
