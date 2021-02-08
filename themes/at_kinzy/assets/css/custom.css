@@ -1,0 +1,104 @@
+/*
+ * Custom code goes here.
+ * A template should always ship with an empty custom.css
+ */
+/* mobile */
+@media screen and (max-width: 768px) {
+    .width-block {
+        width:100%;
+    }
+    .mobile-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+    .mobile-search {
+
+    }
+}
+@media screen and (max-width: 1200px) {
+
+    .width-img{
+        max-width: 100%;
+        /*
+        height: 100%;
+        */
+    }
+
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+
+    .width-img{
+        width: 120%;
+        height: 120%;
+    }
+
+}
+@media screen and (min-width: 1400px) {
+
+    .width-img{
+        max-width: 100%;
+    }
+
+}
+
+
+
+
+.mobilek {
+    display: none;
+}
+.nav-btn{
+    padding: 24px 20px 24px 30px;
+
+}
+
+@media screen and (max-width: 750px) {
+
+    .mobile-nav-dis-none{
+        display: none;
+    }
+    .mobile-nav-dis-block{
+        display: block;
+    }
+
+}
+
+
+.nav-menu{
+    padding: 15px 50px;
+    margin-top: 3px;
+}
+
+.custom_header {
+    padding: 35px 0 35px 0;
+    max-width: 1600px;
+    width: auto;
+    margin: auto;
+}
+.col-lg-3 .col-md-1 .custom_nax_search  {
+    float: right;
+}
+
+@media screen and (max-width: 480px) {
+
+    .text-brand{
+        text-align: center;
+    }
+    .bnt-brand{
+        left: 17%;
+    }
+    .brands{
+        display: block !important;
+    }
+
+
+}
+
+@media screen and (min-width: 770px) {
+    .new_year_logo {
+        margin-left: 15px;
+    }
+}
