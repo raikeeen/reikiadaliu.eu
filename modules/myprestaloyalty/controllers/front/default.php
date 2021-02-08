@@ -73,8 +73,8 @@ class myprestaloyaltyDefaultModuleFrontController extends ModuleFrontController
             if (Configuration::get('PS_ORDER_RETURN'))
                 $date_from += 60 * 60 * 24 * (int)Configuration::get('PS_ORDER_RETURN_NB_DAYS');
 
-            $cart_rule->date_from = date('Y-m-d H:i:s', $date_from);
-            $cart_rule->date_to = date('Y-m-d H:i:s', strtotime($cart_rule->date_from . ' +1 year'));
+            $cart_rule->date_from = date('Y-m-d H:i:s', time());
+            $cart_rule->date_to = date('Y-m-d H:i:s', time()+ 31536000);
 
             $cart_rule->minimum_amount = (float)Configuration::get('PS_LOYALTY_MINIMAL');
             $cart_rule->minimum_amount_currency = (int)$this->context->currency->id;
