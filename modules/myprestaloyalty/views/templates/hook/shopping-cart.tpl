@@ -11,7 +11,7 @@
 
 {if Tools::getValue('ajax')!=1}<div id="loylalty_cart_parent">{/if}
     <p id="loyalty_cart">
-        <span class="material-icons">redeem</span><br/>
+        <span class="material-icons" style="display: block;">redeem</span><br/>
         {if $points > 0}
             {l s='By checking out this shopping cart you can collect up to' mod='myprestaloyalty'}
             <b>
