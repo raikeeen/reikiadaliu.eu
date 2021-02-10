@@ -40,7 +40,7 @@
                         <tr class="alternate_item">
                             <td class="history_link bold">{l s='#' mod='myprestaloyalty'}{$order.reference}</td>
                             <td class="history_date">{dateFormat date=$order.date full=1}</td>
-                            <td class="history_method">{$order.points|intval}</td>
+                            <td class="history_method">{$order.points|intval} ({$order.points|intval*0.02} eur)</td>
                             <td class="history_method">{$order.state|escape:'html':'UTF-8'}</td>
                         </tr>
                     {/foreach}
@@ -79,11 +79,13 @@
                 <!--<p style="text-align:center; margin-top:20px">
                     <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</a>
                 </p>-->
+
                 <div class="col-6">
                 <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">
                 <button type="button" class="btn btn-danger nav-menu">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</button>
                 </a>
                 </div>
+
             {/if}
             {if $nbDiscounts}
                 <div class="block-center" id="block-history">
