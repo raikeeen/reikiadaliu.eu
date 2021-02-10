@@ -31,7 +31,7 @@
                     <tfoot>
                     <tr class="alternate_item">
                         <td colspan="2" class="history_method bold" style="text-align:center;">{l s='Total points available:' mod='myprestaloyalty'}</td>
-                        <td class="history_method" style="text-align:left;">{$totalPoints|intval}</td>
+                        <td class="history_method" style="text-align:left;">{$totalPoints|intval} ~{$totalPoints|intval*0.02}</td>
                         <td class="history_method">&nbsp;</td>
                     </tr>
                     </tfoot>
@@ -80,7 +80,7 @@
                     <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</a>
                 </p>-->
 
-                <div class="col-6">
+                <div class="col-6" style="text-align: center;">
                 <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">
                 <button type="button" class="btn btn-danger nav-menu">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</button>
                 </a>
