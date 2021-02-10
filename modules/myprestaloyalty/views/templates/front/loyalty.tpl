@@ -79,10 +79,9 @@
                 <!--<p style="text-align:center; margin-top:20px">
                     <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</a>
                 </p>-->
-                <form action="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}">
-                    <input type="submit" value="{l s='Transform my points into a voucher of' mod='myprestaloyalty'} onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} />
-                    <span class="price">{Tools::displayPrice($voucher)}</span>."
-                </form>
+                <a href="{Context::getContext()->link->getModuleLink('myprestaloyalty', 'default', ['process' => 'transformpoints'])|escape:'html'}" onclick="return confirm('{l s='Are you sure you want to transform your points into vouchers?' mod='myprestaloyalty' js=1}');">
+                <button type="button" class="btn btn-danger nav-menu">{l s='Transform my points into a voucher of' mod='myprestaloyalty'} <span class="price">{Tools::displayPrice($voucher)}</span>.</button>
+                </a>
             {/if}
             {if $nbDiscounts}
                 <div class="block-center" id="block-history">
