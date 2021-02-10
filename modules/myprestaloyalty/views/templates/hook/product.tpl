@@ -10,7 +10,7 @@
 *}
 
 <p id="loyalty_product" class="align_justify">
-    <span class="material-icons">redeem</span><br/>
+    <span class="material-icons" style="display: block;">redeem</span><br/>
     {if $points}
         {l s='By buying this product you can collect up to' mod='myprestaloyalty'}
         <b><span id="loyalty_points">{$points}</span>
