@@ -40,7 +40,7 @@
                         <tr class="alternate_item">
                             <td class="history_link bold">{l s='#' mod='myprestaloyalty'}{$order.reference}</td>
                             <td class="history_date">{dateFormat date=$order.date full=1}</td>
-                            <td class="history_method">{$order.points|intval} ({number_format($order.points|intval*0.02)} eur)</td>
+                            <td class="history_method">{$order.points|intval} ({number_format($order.points|intval*0.02, 2, ',', ' ')}eur)</td>
                             <td class="history_method">{$order.state|escape:'html':'UTF-8'}</td>
                         </tr>
                     {/foreach}
