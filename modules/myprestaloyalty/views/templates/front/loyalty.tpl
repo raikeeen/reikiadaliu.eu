@@ -31,7 +31,7 @@
                     <tfoot>
                     <tr class="alternate_item">
                         <td colspan="2" class="history_method bold" style="text-align:center;">{l s='Total points available:' mod='myprestaloyalty'}</td>
-                        <td class="history_method" style="text-align:left;">{$totalPoints|intval} / {number_format($order.totalPoints|intval*0.02, 2, ',', ' ')}eur</td>
+                        <td class="history_method" style="text-align:left;">{$totalPoints|intval} / {number_format($order.totalPoints|intval*0.02, 2, ',', ' ')}€</td>
                         <td class="history_method">&nbsp;</td>
                     </tr>
                     </tfoot>
@@ -40,7 +40,7 @@
                         <tr class="alternate_item">
                             <td class="history_link bold">{l s='#' mod='myprestaloyalty'}{$order.reference}</td>
                             <td class="history_date">{dateFormat date=$order.date full=1}</td>
-                            <td class="history_method">{$order.points|intval} / {number_format($order.points|intval*0.02, 2, ',', ' ')}eur</td>
+                            <td class="history_method">{$order.points|intval} / {number_format($order.points|intval*0.02, 2, ',', ' ')}€</td>
                             <td class="history_method">{$order.state|escape:'html':'UTF-8'}</td>
                         </tr>
                     {/foreach}
