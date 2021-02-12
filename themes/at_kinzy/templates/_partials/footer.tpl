@@ -59,35 +59,7 @@
             <button type="button" class="close"></button>
         </div>
     </div>
-    <script type="text/javascript" src="https://s2.getsitecontrol.com/widgets/preview/runtime.d93f1c9.js"></script>
-    <script type="text/javascript">
-        ;(function(cxt) {
-            function handleEvent(evt) {
-                try {
-                    if (cxt.parent.document) {
-                        var event;
-                        switch (evt.type) {
-                            case 'keydown':
-                                event = new KeyboardEvent(evt.type, evt);
-                                break;
-                            default:
-                                event = new Event(evt.type);
-                                break;
-                        }
-                        if (event) {
-                            cxt.parent.document.dispatchEvent(event);
-                        }
-                    }
-                } catch (err) {
-                    console.log('preview error', err);
-                }
-            }
-            var events = ['click', 'keydown'];
-            for (var i = events.length; i-- > 0;) {
-                cxt.document.addEventListener(events[i], handleEvent, false);
-            }
-        })(this);
-    </script>
+
 {/block}
 {block name='hook_footer_after'}
   <div class="footer-bottom">
