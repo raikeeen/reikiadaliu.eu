@@ -57,8 +57,8 @@
 </script>
 <script type="text/javascript">
 	function wpguruLink() {
-		var istS = 'Šaltinis:';
-		var copyR = '© rm-autodalys.lt';
+		var istS = 'Daugiau informacijos rasite:';
+		var copyR = 'Draudžiama kopijuoti turinį be raštiško sutikimo. Visos teisės saugomos © rm-autodalys.lt';
 		var body_element = document.getElementsByTagName('body')[0];
 		var choose = window.getSelection();
 		var myLink = document.location.href;
