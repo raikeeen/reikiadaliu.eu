@@ -87,7 +87,7 @@
       border-radius: 0;
       bottom: 35px;
       top: auto;
-      width: 15%;
+      width: 25%;
       left: 35px;
       z-index: 999;
 
