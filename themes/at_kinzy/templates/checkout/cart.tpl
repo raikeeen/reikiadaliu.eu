@@ -27,6 +27,29 @@
 {block name='content'}
 
   <section id="main" class="container">
+    {if $cart.totals.total_including_tax.value > 150}
+      <div class="row" id="promo" style="display: block">
+        <div class="col-2">
+          <div id="root">
+            <div role="dialog" id="wpreview" class="page-1 page-last" expanded="true" style="">
+              <div class="container">
+                <div class="body">
+                  <div class="content no-fields"><h1 class="title">SVEIKINAME!</h1>
+                    <p class="description">
+                    <div>ŠIAM UŽSAKYMUI DOVANOJAME JUMS 5% NUOLAIDĄ SU KODU</div>
+                    </p>
+                    <form novalidate="" class="form valid pristine"></form>
+                    <p class="note">
+                      <span>YSCDH7KQ</span>
+                    </p></div>
+                </div>
+                <button type="button" class="close"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {/if}
     <div class="cart-grid row">
 
       <!-- Left Block: cart product informations & shpping -->

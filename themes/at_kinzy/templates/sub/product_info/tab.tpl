@@ -90,8 +90,8 @@
 	</div>
 	<div id="dom-target" style="display: none;">
 	{if $cart.totals.total_including_tax.value > 150}
-		{$price = $cart.totals.total_including_tax.value}
-	{/if}</div>
+
+	</div>
 		<div class="row" id="promo" style="display: block">
 			<div class="col-2">
 				<div id="root">
@@ -113,8 +113,5 @@
 				</div>
 			</div>
 		</div>
-<script>
-	var div = document.getElementById("dom-target");
-	console.log(div);
-</script>
+	{/if}
 {/block}
