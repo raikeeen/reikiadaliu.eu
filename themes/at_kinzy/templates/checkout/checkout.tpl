@@ -214,7 +214,7 @@
                                       <span>YSCDH7KQ</span>
                                   </p></div>
                           </div>
-                          <button type="button" class="close"></button>
+                          <button type="button" class="close">x</button>
                       </div>
                   </div>
               </div>
