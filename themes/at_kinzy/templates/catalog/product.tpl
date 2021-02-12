@@ -128,7 +128,7 @@
                         {/if}
                       {/block}
                     {if $cart.totals.total_including_tax.value > 150}
-                        <div class="row" id="promo">
+                        <div class="row" id="promo" style="display: block">
                             <div class="col-2">
                                 <div id="root">
                                     <div role="dialog" id="wpreview" class="page-1 page-last" expanded="true" style="">
