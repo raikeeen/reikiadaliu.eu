@@ -70,7 +70,7 @@
         }
 
         .container-promo {
-            position: absolute;
+            position: fixed;
             overflow: visible;
             border-radius: 8px;
             padding-top: 48px;
@@ -89,6 +89,7 @@
             top: auto;
             width: 15%;
             left: 35px;
+
         }
 
         .page-1 {
