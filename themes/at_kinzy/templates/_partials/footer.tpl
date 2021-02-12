@@ -40,26 +40,25 @@
     {/if}
       <div class="inner">{hook h='displayFooter'}</div>
     {if isset($fullwidth_hook.displayFooter) AND $fullwidth_hook.displayFooter == 0}
+          <div role="dialog" id="wpreview" class="page-1 page-last" expanded="true" style="">
+              <div class="container">
+                  <div class="images"></div>
+                  <div class="body">
+                      <div class="content no-fields"><h1 class="title">SVEIKINAME!</h1>
+                          <p class="description">
+                          <div>ŠIAM UŽSAKYMUI DOVANOJAME JUMS 5% NUOLAIDĄ SU KODU</div>
+                          </p>
+                          <form novalidate="" class="form valid pristine"></form>
+                          <p class="note">
+                          <div>YSCDH7KQ</div>
+                          </p></div>
+                  </div>
+                  <button type="button" class="close"></button>
+              </div>
+          </div>
       </div>
     {/if}
   </div>
-    <div role="dialog" id="wpreview" class="page-1 page-last" expanded="true" style="">
-        <div class="container">
-            <div class="images"></div>
-            <div class="body">
-                <div class="content no-fields"><h1 class="title">SVEIKINAME!</h1>
-                    <p class="description">
-                    <div>ŠIAM UŽSAKYMUI DOVANOJAME JUMS 5% NUOLAIDĄ SU KODU</div>
-                    </p>
-                    <form novalidate="" class="form valid pristine"></form>
-                    <p class="note">
-                    <div>YSCDH7KQ</div>
-                    </p></div>
-            </div>
-            <button type="button" class="close"></button>
-        </div>
-    </div>
-
 {/block}
 {block name='hook_footer_after'}
   <div class="footer-bottom">
