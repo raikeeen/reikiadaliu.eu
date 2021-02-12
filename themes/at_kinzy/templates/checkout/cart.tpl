@@ -39,7 +39,7 @@
         text-align: center;
       }
 
-      .description {
+      .description-promo {
         font-size: 18px;
         line-height: 28px;
         margin-bottom: 24px;
@@ -50,7 +50,7 @@
         line-height: 1.5;
       }
 
-      .title {
+      .title-promo {
         font-size: 28px;
         line-height: 36px;
         font-weight: 900;
@@ -59,19 +59,19 @@
         margin-bottom: 24px;
       }
 
-      .content {
+      .content-promo {
         position: relative;
         display: flex;
         flex-direction: column;
       }
 
-      .body {
+      .body-promo {
         font-family: 'Sora', sans-serif;
         font-size: 18px;
         line-height: 28px;
       }
 
-      .container {
+      .container-promo {
         position: absolute;
         overflow: visible;
         border-radius: 8px;
@@ -114,10 +114,10 @@
         <div class="col-2">
           <div id="root">
             <div role="dialog" id="wpreview" class="page-1 page-last" expanded="true" style="">
-              <div class="container">
-                <div class="body">
-                  <div class="content no-fields"><h1 class="title">SVEIKINAME!</h1>
-                    <p class="description">
+              <div class="container-promo">
+                <div class="body-promo">
+                  <div class="content-promo no-fields"><h1 class="title-promo">SVEIKINAME!</h1>
+                    <p class="description-promo">
                     <div>ŠIAM UŽSAKYMUI DOVANOJAME JUMS 5% NUOLAIDĄ SU KODU</div>
                     </p>
                     <form novalidate="" class="form valid pristine"></form>
