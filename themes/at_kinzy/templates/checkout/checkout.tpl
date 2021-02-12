@@ -34,89 +34,107 @@
 
   <body id="{$page.page_name}" class="{$page.body_classes|classnames}{if isset($LEO_LAYOUT_MODE)} {$LEO_LAYOUT_MODE}{/if}{if isset($USE_FHEADER) && $USE_FHEADER} keep-header{/if}">
   <style>
+      .note {
+          margin: 0;
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 700;
+          padding: 12px;
+          border: 2px dashed #363d4d;
+          color: #363d4d;
+          text-align: center;
+      }
+
+      .description-promo {
+          font-size: 18px;
+          line-height: 28px;
+          margin-bottom: 24px;
+          white-space: normal;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          word-break: normal;
+          line-height: 1.5;
+      }
+
+      .title-promo {
+          font-size: 28px;
+          line-height: 36px;
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 1.3333;
+          margin-bottom: 24px;
+      }
+
+      .content-promo {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .body-promo {
+          font-family: 'Sora', sans-serif;
+          font-size: 18px;
+          line-height: 28px;
+      }
+
+      .container-promo {
+          position: fixed;
+          overflow: visible;
+          border-radius: 8px;
+          padding-top: 48px;
+          padding-right: 80px;
+          padding-bottom: 48px;
+          padding-left: 48px;
+          background-image: none;
+          background-repeat: no-repeat;
+          background-size: initial;
+          background-position: initial;
+          background-color: rgba(255, 255, 255, 1);
+          color: rgba(54, 61, 77, 1);
+          box-shadow: 0 10px 24px 0 rgb(54 61 77 / 15%);
+          border-radius: 0;
+          bottom: 35px;
+          top: auto;
+          width: 25%;
+          left: 35px;
+          z-index: 999;
+      }
+
+      .page-1 {
+          left: 32px;
+          right: auto;
+          bottom: 32px;
+          margin: 0;
+      }
+
+      .close {
+          color: inherit;
+          top: 0;
+          right: 0;
+          padding: 16px;
+          position: absolute;
+          z-index: 1;
+      }
       @media screen and (min-width: 1300px) {
-          .note {
-              margin: 0;
-              font-size: 18px;
-              line-height: 28px;
-              font-weight: 700;
-              padding: 12px;
-              border: 2px dashed #363d4d;
-              color: #363d4d;
-              text-align: center;
-          }
-
-          .description-promo {
-              font-size: 18px;
-              line-height: 28px;
-              margin-bottom: 24px;
-              white-space: normal;
-              overflow-wrap: break-word;
-              word-wrap: break-word;
-              word-break: normal;
-              line-height: 1.5;
-          }
-
-          .title-promo {
-              font-size: 28px;
-              line-height: 36px;
-              font-weight: 900;
-              font-size: 24px;
-              line-height: 1.3333;
-              margin-bottom: 24px;
-          }
-
-          .content-promo {
-              position: relative;
-              display: flex;
-              flex-direction: column;
-          }
-
           .body-promo {
-              font-family: 'Sora', sans-serif;
               font-size: 18px;
               line-height: 28px;
           }
-
           .container-promo {
-              position: fixed;
-              overflow: visible;
-              border-radius: 8px;
               padding-top: 48px;
               padding-right: 80px;
               padding-bottom: 48px;
               padding-left: 48px;
-              background-image: none;
-              background-repeat: no-repeat;
-              background-size: initial;
-              background-position: initial;
-              background-color: rgba(255, 255, 255, 1);
-              color: rgba(54, 61, 77, 1);
-              box-shadow: 0 10px 24px 0 rgb(54 61 77 / 15%);
-              border-radius: 0;
-              bottom: 35px;
-              top: auto;
               width: 25%;
-              left: 35px;
-              z-index: 999;
 
           }
-
-
-          .page-1 {
-              left: 32px;
-              right: auto;
-              bottom: 32px;
-              margin: 0;
+          .title-promo {
+              font-size: 24px;
+              margin-bottom: 24px;
           }
-
-          .close {
-              color: inherit;
-              top: 0;
-              right: 0;
-              padding: 16px;
-              position: absolute;
-              z-index: 1;
+          .description-promo{
+              margin-bottom: 24px;
+          }
           }
           @media screen and (max-width: 700px) {
               .container-promo{
@@ -134,7 +152,6 @@
                   margin-bottom: 0px;
               }
               .body-promo{
-                  font-family: 'Sora', sans-serif;
                   font-size: 14px;
                   line-height: 18px;
               }
@@ -155,7 +172,6 @@
                   margin-bottom: 0px;
               }
               .body-promo{
-                  font-family: 'Sora', sans-serif;
                   font-size: 16px;
                   line-height: 22px;
               }
@@ -176,7 +192,6 @@
                   margin-bottom: 0px;
               }
               .body-promo{
-                  font-family: 'Sora', sans-serif;
                   font-size: 16px;
                   line-height: 22px;
               }
