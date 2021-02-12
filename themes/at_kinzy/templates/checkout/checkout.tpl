@@ -34,7 +34,7 @@
 
   <body id="{$page.page_name}" class="{$page.body_classes|classnames}{if isset($LEO_LAYOUT_MODE)} {$LEO_LAYOUT_MODE}{/if}{if isset($USE_FHEADER) && $USE_FHEADER} keep-header{/if}">
   <style>
-      @media screen and (max-width: 5000px) {
+      @media screen and (min-width: 1300px) {
           .note {
               margin: 0;
               font-size: 18px;
@@ -139,7 +139,7 @@
                   line-height: 18px;
               }
           }
-          @media screen and (max-width: 1100px) {
+          @media screen and (min-width: 700px) and (max-width: 1100px)  {
               .container-promo{
                   width: 30%;
                   padding-top: 40px;
@@ -160,7 +160,7 @@
                   line-height: 22px;
               }
           }
-          @media screen and (max-width: 1300px) {
+          @media screen and (min-width: 1100px) and (max-width: 1300px) {
               .container-promo{
                   width: 40%;
                   padding-top: 40px;
