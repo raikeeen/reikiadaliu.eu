@@ -214,12 +214,17 @@
                                       <span>YSCDH7KQ</span>
                                   </p></div>
                           </div>
-                          <button type="button" class="close">x</button>
+                          <button type="button" id="hider" class="close" style="padding: 5px 10px;">x</button>
                       </div>
                   </div>
               </div>
           </div>
       </div>
+      <script>
+          document.getElementById('hider').onclick = function() {
+              document.getElementById('promo').hidden = true;
+          }
+      </script>
   {/if}
   <div id="page">
     {block name='hook_after_body_opening_tag'}
