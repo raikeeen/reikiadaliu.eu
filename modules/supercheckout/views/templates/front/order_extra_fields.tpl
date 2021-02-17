@@ -12,7 +12,7 @@
 						'type': 'ajax',
 						'ajax': {
 						    dataFilter: function(data) {
-							return $(data).find('#supercheckout-agree')[0];
+							return $(data).find('section#main')[0];
 						}
 					    }
 					});
@@ -93,7 +93,7 @@
     <div id="supercheckout-agree">
         {foreach from=$conditions_to_approve item="condition" key="condition_name"}
             <div class="checkbox">
-                <input id="conditions_to_approve[{$condition_name}]" type="checkbox" name="conditions_to_approve[{$condition_name}]" value="1" />
+                <input id="conditions_to_approve[{$condition_name}]" type="checkbox" name="conditions_to_approve[{$condition_name}]" value="1" checked="checked"/>
                 <label for="conditions_to_approve[{$condition_name}]">
 
                     {$condition nofilter}{*escape not required as contains html*}
