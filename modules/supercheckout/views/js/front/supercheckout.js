@@ -1995,7 +1995,7 @@ function displayGeneralError(errors) {
     if ($('#supercheckout-empty-page-content .permanent-warning').length) {
         $('#supercheckout-empty-page-content .permanent-warning').html(errors);
     } else {
-        $('#supercheckout-empty-page-content').html('<div class="permanent-warning">' + errors + '</div>');
+        $('#supercheckout-empty-page-content').html('<a href="#terms"><div class="permanent-warning">' + errors + '</div></a>');
     }
 }
 
@@ -2419,13 +2419,13 @@ function placeOrder() {
             }
         });
         if (!is_toc_checked) {
-            var hiddenElement = document.getElementById("supercheckout-agree");
-            hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
-            /*displayGeneralError(toc_error);
+            displayGeneralError(toc_error);
+            /*var hiddenElement = document.getElementById("supercheckout-agree");
+            hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});*/
             $("html, body").animate({
                 scrollTop: 0
             }, "fast");
-            return;*/
+            return;
         }
     }
     
