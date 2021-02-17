@@ -2419,11 +2419,13 @@ function placeOrder() {
             }
         });
         if (!is_toc_checked) {
-            displayGeneralError(toc_error);
+            var hiddenElement = document.getElementById("supercheckout-agree");
+            hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
+            /*displayGeneralError(toc_error);
             $("html, body").animate({
                 scrollTop: 0
             }, "fast");
-            return;
+            return;*/
         }
     }
     
