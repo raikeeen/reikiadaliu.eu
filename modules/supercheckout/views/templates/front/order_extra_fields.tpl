@@ -90,7 +90,7 @@
     {* GDPR Change*}
     <input type="hidden" value="{l s='I agree to the terms of service and will adhere to them unconditionally. ' mod='supercheckout'}" name="supercheckout_default_policy" />
     {* GDPR Change*}
-    <div id="supercheckout-agree">
+    <div id="supercheckout-agree terms">
         {foreach from=$conditions_to_approve item="condition" key="condition_name"}
             <div class="checkbox">
                 <input id="conditions_to_approve[{$condition_name}]" type="checkbox" name="conditions_to_approve[{$condition_name}]" value="1" />
