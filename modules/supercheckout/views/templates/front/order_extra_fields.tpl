@@ -12,7 +12,7 @@
 						'type': 'ajax',
 						'ajax': {
 						    dataFilter: function(data) {
-							return $(data).find('section#main')[0];
+							return $(data).find('#supercheckout-agree')[0];
 						}
 					    }
 					});
