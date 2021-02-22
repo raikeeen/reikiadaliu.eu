@@ -56,7 +56,7 @@
                                 {$error}
                             </div>
                         {elseif isset($terminals) && !empty($terminals)}
-                            <div class="lp_carrier col-xs-12" data-carrier-id="{$id_carrier}" style="{if $carrier.id|intval == "45"}display: block; {else}display: none;{/if}">
+                            <div class="lp_carrier col-xs-12" data-carrier-id="{$id_carrier}" style="{if $carrier.id|intval == "47"}display: block; {else}display: none;{/if}">
                                 <select id="lp_express_terminal">
                                     <option>{l s='Select terminal' mod='lpexpress'}</option>
 
