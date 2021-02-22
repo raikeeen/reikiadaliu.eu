@@ -2,8 +2,7 @@
     <div class="lp_carrier error col-xs-12" data-carrier-id="{$id_carrier}">
         {$error}
     </div>
-    {/if}
-
+{elseif isset($terminals) && !empty($terminals)}
     <div class="lp_carrier col-xs-12" data-carrier-id="{$id_carrier}">
         <select id="lp_express_terminal">
             <option>{l s='Select terminal' mod='lpexpress'}</option>
@@ -17,4 +16,4 @@
             {/foreach}
         </select>
     </div>
-
+{/if}
