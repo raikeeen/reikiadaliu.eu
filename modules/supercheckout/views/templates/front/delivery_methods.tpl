@@ -68,6 +68,7 @@
                                     </optgroup>
                                 {/foreach}
                             </select>
+                            {include file="file:/var/www/reikiadaliu.eu/public_html/modules/lpexpress/views/templates/hook/orderTerminalDelivery_1-6.tpl"}
                         </div>
                     {/if}
                                     </li>
