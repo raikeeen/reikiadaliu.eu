@@ -69,7 +69,6 @@
                                     </optgroup>
                                 {/foreach}
                             </select>
-                            {include file="file:/var/www/reikiadaliu.eu/public_html/modules/lpexpress/views/templates/hook/orderTerminalDelivery_1-6.tpl"}
                             <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 421px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-lp_express_terminal-container"><span class="select2-selection__rendered" id="select2-lp_express_terminal-container" title="Pasirinkite terminalą">Pasirinkite terminalą</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     {/if}
