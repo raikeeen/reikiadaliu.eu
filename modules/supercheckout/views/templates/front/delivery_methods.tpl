@@ -56,8 +56,8 @@
                             {$error}
                         </div>
                     {elseif isset($terminals) && !empty($terminals)}
-                        <div class="lp_carrier col-12" data-carrier-id="{$id_carrier}" style="{if $carrier.id|intval == "47"}display: block; {else}display: none;{/if}">
-                            <select id="lp_express_terminal">
+                        <div class="lp_carrier col-12" data-carrier-id="{$id_carrier}" style="overflow: hidden;{if $carrier.id|intval == "47"}display: block; {else}display: none;{/if}">
+                            <select id="lp_express_terminal" style="box-sizing: border-box; width: auto; max-width: 100%;">
                                 <option>{l s='Select terminal' mod='lpexpress'}</option>
 
                                 {foreach $terminals as $city => $terminals_by_city}
