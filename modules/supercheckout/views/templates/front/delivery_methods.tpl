@@ -25,7 +25,6 @@
             {foreach from=$delivery_options item=carrier key=carrier_id}
                 
                 <li class="highlight">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <div class="radio ">
                     {if !empty($delivery_option) && $delivery_option == $carrier_id  && $selected == 0}
                        {* <li class="highlight alert-info">
@@ -59,7 +58,7 @@
                     {elseif isset($terminals) && !empty($terminals)}
 
                         <div class="lp_carrier col-12" data-carrier-id="{$id_carrier}" style="overflow: hidden;{if $carrier.id|intval == "47"}display: block; {else}display: none;{/if}">
-                            <select id="lp_express_terminal" style="box-sizing: border-box; width: auto; max-width: 100%;">
+                            <select id="lp_express_terminal" tabindex="-1" style="box-sizing: border-box; width: auto; max-width: 100%;">
                                 <option>{l s='Select terminal' mod='lpexpress'}</option>
 
                                 {foreach $terminals as $city => $terminals_by_city}
@@ -71,6 +70,7 @@
                                 {/foreach}
                             </select>
                             {include file="file:/var/www/reikiadaliu.eu/public_html/modules/lpexpress/views/templates/hook/orderTerminalDelivery_1-6.tpl"}
+                            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 421px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-lp_express_terminal-container"><span class="select2-selection__rendered" id="select2-lp_express_terminal-container" title="Pasirinkite terminalą">Pasirinkite terminalą</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     {/if}
                                     </li>
