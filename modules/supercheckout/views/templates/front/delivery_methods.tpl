@@ -61,7 +61,7 @@
                                 <option>{l s='Select terminal' mod='lpexpress'}</option>
 
                                 {foreach $terminals as $city => $terminals_by_city}
-                                    <optgroup label="{$city}">
+                                    <optgroup label="{$city}" style="font-weight: 900;">
                                         {foreach $terminals_by_city as $terminal}
                                             <option value="{$terminal['id_lpexpress_terminal']}"{if isset($selected_terminal) && $selected_terminal == $terminal['id_lpexpress_terminal']} selected{/if}>{$terminal['name']} {$terminal['address']}, {$terminal['city']}</option>
                                         {/foreach}
