@@ -50,12 +50,13 @@
                                                 {/if}
                                                 <span class="supercheckout-shipping-small-title shippingPrice">{$carrier.price nofilter}</span></label>{*escape not required*}
                                             <p class="shippingInfo supercheckout-shipping-small-title">{$carrier.delay}</p>
+
                         {if isset($error) && !empty($error)}
                             <div class="lp_carrier error col-xs-12" data-carrier-id="{$id_carrier}">
                                 {$error}
                             </div>
                         {elseif isset($terminals) && !empty($terminals)}
-                            <div class="lp_carrier col-xs-12" data-carrier-id="{$id_carrier}">
+                            <div class="lp_carrier col-xs-12" data-carrier-id="{$id_carrier}" style="{if $carrier.id|intval == "45"}display: block; {else}display: none;{/if}">
                                 <select id="lp_express_terminal">
                                     <option>{l s='Select terminal' mod='lpexpress'}</option>
 
@@ -69,6 +70,7 @@
                                 </select>
                             </div>
                         {/if}
+
                     </div>
                                     </li>
                                        
