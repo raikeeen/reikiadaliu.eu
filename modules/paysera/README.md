@@ -1,9 +1,9 @@
 Paysera for Prestashop 1.7
 ==========================
 
-Version: 2.0.6
+Version: 2.0.9
 
-Date: 2020-04-27
+Date: 2020-12-17
 
 Contributors: Paysera
 
@@ -11,9 +11,9 @@ Tags: online payment, payment, payment gateway, SMS payments, international paym
 
 Requires at least: 1.7.0
 
-Tested up to: 1.7.5.1
+Tested up to: 1.7.7.0
 
-Stable tag: 2.0.6
+Stable tag: 2.0.9
 
 Requires PHP: 5.4
 
@@ -93,7 +93,7 @@ Installation
 
 1. Download Paysera plugin zip.
 
-2. Connect to Prestaship admin panel.
+2. Connect to Prestashop admin panel.
 
 3. Install Paysera plugin to Prestashop:
     Choice Modules -> Upload Module -> Choice File -> Configure Paysera plugin
@@ -103,6 +103,23 @@ Installation
 
 Changelog
 ---------
+= 2.0.9 =
+
+* Update - Translations update
+* Update - Code style
+* Fix - Payment display fix
+* Update - New payment parameter usage
+
+= 2.0.8 =
+
+* Update - Code style
+
+= 2.0.7 =
+
+* Update - Code style
+
+* Update - Updated WebToPay library to the latest
+
 = 2.0.6 =
 
 * Update - Added missing translations

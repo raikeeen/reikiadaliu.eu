@@ -88,6 +88,7 @@ class PayseraRedirectModuleFrontController extends ModuleFrontController
         $projectID       = Configuration::get('PAYSERA_GENERAL_PROJECT_ID');
         $projectPassword = Configuration::get('PAYSERA_GENERAL_SIGN_PASS');
         $testMode        = Configuration::get('PAYSERA_GENERAL_TEST_MODE');
+        $buyerConsent    = Configuration::get('PAYSERA_EXTRA_BUYER_CONSENT');
 
         $cart     = $this->context->cart;
         if (version_compare(_PS_VERSION_, '1.7.1') < 0) {
@@ -142,6 +143,7 @@ class PayseraRedirectModuleFrontController extends ModuleFrontController
             'p_zip'         => $billingPostCode,
             'p_countrycode' => $billingCountry,
             'lang'          => $lang,
+            'buyer_consent' => (int) $buyerConsent,
         );
 
         return $data;

@@ -60,7 +60,7 @@ class Paysera extends PaymentModule
     public function __construct()
     {
         $this->name = 'paysera';
-        $this->version = '2.0.6';
+        $this->version = '2.0.9';
         $this->tab = 'payments_gateways';
         $this->compatibility = array('min' => '1.7.0', 'max' => _PS_VERSION_);
         $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
@@ -103,6 +103,7 @@ class Paysera extends PaymentModule
         Configuration::updateValue('PAYSERA_EXTRA_SPECIFIC_COUNTRIES_GROUP', $defaultVal['countries']);
         Configuration::updateValue('PAYSERA_EXTRA_GRIDVIEW', '');
         Configuration::updateValue('PAYSERA_EXTRA_FORCE_LOGIN', '');
+        Configuration::updateValue('PAYSERA_EXTRA_BUYER_CONSENT', '');
         Configuration::updateValue('PAYSERA_ORDER_STATUS_NEW', '');
         Configuration::updateValue('PAYSERA_ORDER_STATUS_PAID', '');
         Configuration::updateValue('PAYSERA_ORDER_STATUS_PENDING', '');
@@ -190,6 +191,7 @@ class Paysera extends PaymentModule
             || !Configuration::deleteByName('PAYSERA_EXTRA_SPECIFIC_COUNTRIES_GROUP')
             || !Configuration::deleteByName('PAYSERA_EXTRA_GRIDVIEW')
             || !Configuration::deleteByName('PAYSERA_EXTRA_FORCE_LOGIN')
+            || !Configuration::deleteByName('PAYSERA_EXTRA_BUYER_CONSENT')
             || !Configuration::deleteByName('PAYSERA_ORDER_STATUS_NEW')
             || !Configuration::deleteByName('PAYSERA_ORDER_STATUS_PAID')
             || !Configuration::deleteByName('PAYSERA_ORDER_STATUS_PENDING')
@@ -674,6 +676,11 @@ class Paysera extends PaymentModule
         } else {
             $translations['force_login']['label'] = $this->l('PAYSERA_EXTRA_FORCE_LOGIN');
         }
+        if ($this->l('PAYSERA_EXTRA_BUYER_CONSENT') == "PAYSERA_EXTRA_BUYER_CONSENT") {
+            $translations['buyer_consent']['label'] = "Buyer consent";
+        } else {
+            $translations['buyer_consent']['label'] = $this->l('PAYSERA_EXTRA_BUYER_CONSENT');
+        }
 
         if ($this->l('PAYSERA_EXTRA_TITLE_DESC') == "PAYSERA_EXTRA_TITLE_DESC") {
             $translations['title']['desc'] = "Payment method title that the customer will see on your website.";
@@ -704,6 +711,11 @@ class Paysera extends PaymentModule
             $translations['force_login']['desc'] = "Enable this to force customer to login on checkout";
         } else {
             $translations['force_login']['desc'] = $this->l('PAYSERA_EXTRA_FORCE_LOGIN_DESC');
+        }
+        if ($this->l('PAYSERA_EXTRA_BUYER_CONSENT_DESC') == "PAYSERA_EXTRA_BUYER_CONSENT_DESC") {
+            $translations['buyer_consent']['desc'] = "Enable this to use buyer consent";
+        } else {
+            $translations['buyer_consent']['desc'] = $this->l('PAYSERA_EXTRA_BUYER_CONSENT_DESC');
         }
 
         if ($this->l('BACKEND_EXTRA_SAVE') == "BACKEND_EXTRA_SAVE") {
@@ -762,6 +774,10 @@ class Paysera extends PaymentModule
             Configuration::updateValue(
                 'PAYSERA_EXTRA_FORCE_LOGIN',
                 Tools::getValue('PAYSERA_EXTRA_FORCE_LOGIN')
+            );
+            Configuration::updateValue(
+                'PAYSERA_EXTRA_BUYER_CONSENT',
+                Tools::getValue('PAYSERA_EXTRA_BUYER_CONSENT')
             );
 
             if ($this->l('PAYSERA_SUCCESS_EXTRA_SETTING') == "PAYSERA_SUCCESS_EXTRA_SETTING") {
@@ -845,6 +861,10 @@ class Paysera extends PaymentModule
                         'PAYSERA_EXTRA_FORCE_LOGIN',
                         $translations['force_login']
                     ),
+                    $this->getBoolForm(
+                        'PAYSERA_EXTRA_BUYER_CONSENT',
+                        $translations['buyer_consent']
+                    ),
                 ),
                 'submit' => array(
                     'title' => $translations['save']
@@ -866,6 +886,7 @@ class Paysera extends PaymentModule
         $configPaymentsList = Configuration::get('PAYSERA_EXTRA_LIST_OF_PAYMENTS');
         $configGrid         = Configuration::get('PAYSERA_EXTRA_GRIDVIEW');
         $configForceLogin   = Configuration::get('PAYSERA_EXTRA_FORCE_LOGIN');
+        $configBuyerConsent = Configuration::get('PAYSERA_EXTRA_BUYER_CONSENT');
 
         $multiSelectValues = $this->getMultipleFieldValues('PAYSERA_EXTRA_SPECIFIC_COUNTRIES');
 
@@ -880,6 +901,8 @@ class Paysera extends PaymentModule
             Tools::getValue('PAYSERA_EXTRA_GRIDVIEW', $configGrid);
         $extraSetting['PAYSERA_EXTRA_FORCE_LOGIN'] =
             Tools::getValue('PAYSERA_EXTRA_FORCE_LOGIN', $configForceLogin);
+        $extraSetting['PAYSERA_EXTRA_BUYER_CONSENT'] =
+            Tools::getValue('PAYSERA_EXTRA_BUYER_CONSENT', $configBuyerConsent);
         $extraSetting[$multiSelectValues['name']] = $multiSelectValues['values'];
 
         return $extraSetting;
@@ -1508,6 +1531,7 @@ class Paysera extends PaymentModule
         $description           = $translations['desc'];
         $selectedCountries     = json_decode(Configuration::get('PAYSERA_EXTRA_SPECIFIC_COUNTRIES_GROUP'));
         $gridView              = Configuration::get('PAYSERA_EXTRA_GRIDVIEW');
+        $buyerConsent          = Configuration::get('PAYSERA_EXTRA_BUYER_CONSENT');
         $displayPaymentMethods = (bool) Configuration::get('PAYSERA_EXTRA_LIST_OF_PAYMENTS');
 
         $cartDetails           = $this->context->cart;
@@ -1530,13 +1554,22 @@ class Paysera extends PaymentModule
             ->setDisplayList($displayPaymentMethods)
             ->setCountriesSelected($selectedCountries)
             ->setGridView($gridView)
+            ->setBuyerConsent($buyerConsent)
             ->setDescription($description)
             ->setCartTotal($cartTotal)
             ->setCartCurrency($currency)
             ->setAvailableLang($this->getAvailableLang())
+            ->setBuyerConsentTranslations($this->getBuyerConsentTranslations())
         ;
 
-        $payseraOption->setAdditionalInformation($additionalInfo->build(false));
+        $paymentForm = $additionalInfo->build(false);
+
+        $this->smarty->assign(array(
+            'title'       => $title,
+            'description' => $description,
+            'payments'    => $paymentForm
+        ));
+
         $payseraOption->setInputs(array(
             'paysera_billing_country' => array(
                 'name'  => 'paysera_billing_country',
@@ -1550,23 +1583,43 @@ class Paysera extends PaymentModule
             ),
         ));
 
-        return array($payseraOption);
+        $payseraOption->setAdditionalInformation($this->fetch('module:paysera/views/templates/hook/payment.tpl'));
+
+        return [$payseraOption];
     }
 
-	/**
-	 * @return array
-	 */
+    /**
+     * @return array
+     */
+    public function getBuyerConsentTranslations()
+    {
+        $translations = array();
+
+        $translations['description'] = $this->l(
+            'Please be informed that the account information and payment initiation services will be provided to you
+             by Paysera in accordance with these %s. By proceeding with this payment, you agree to receive this service
+              and the service terms and conditions.'
+        );
+        $translations['link'] = $this->l('https://www.paysera.lt/v2/en-LT/legal/pis-rules-2020');
+        $translations['rules'] = $this->l('rules');
+
+        return $translations;
+    }
+
+    /**
+     * @return array
+     */
     public function getPaymentOptionsTranslations()
     {
         $keys = array('title' => 'PAYSERA_EXTRA_TITLE', 'desc' => 'PAYSERA_EXTRA_DESCRIPTION',);
         $translations = array();
 
-        foreach($keys as $name => $key) {
-	        $translations[$name] = $this->l(Configuration::get($key));
+        foreach ($keys as $name => $key) {
+            $translations[$name] = $this->l(Configuration::get($key));
         }
 
-	    return $translations;
-	}
+        return $translations;
+    }
 
     /**
      * @return bool
@@ -1618,7 +1671,7 @@ class Paysera extends PaymentModule
      */
     private function getCountries()
     {
-        $countries = array();
+        $countries = [];
         $projectID = Configuration::get('PAYSERA_GENERAL_PROJECT_ID');
 
         if (!$projectID) {
@@ -1626,10 +1679,15 @@ class Paysera extends PaymentModule
         }
 
         $countryCode = $this->context->language->iso_code;
-        $methods = WebToPay::getPaymentMethodList($projectID)
-            ->setDefaultLanguage($countryCode)
-            ->getCountries();
 
+        try {
+            $methods = WebToPay::getPaymentMethodList($projectID)
+                ->setDefaultLanguage($countryCode)
+                ->getCountries()
+            ;
+        } catch (WebToPayException $exception) {
+            return [];
+        }
 
         $countries[] = array(
             'id'   => '',

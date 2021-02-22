@@ -1,0 +1,205 @@
+/**
+ * 2015 Adilis
+ *
+ * The Optimization and Cleaning module is an extremely versatile toolkit for your online store.
+ * Optimize your online store by deleting old or unused data, check your configuration and check the speed of your Prestashop
+ * and relax knowing that you’re protected by the integrated data recovery system.
+ *
+ *  @author    Adilis <support@adilis.fr>
+ *  @copyright 2015 SAS Adilis
+ *  @license   http://www.adilis.fr
+*/
+
+.all_tables ul,
+.overall_tables ul {
+    margin-bottom: 0;
+}
+
+.all_tables li span.table-name,
+.overall_tables li span.table-name {
+    max-width: 60%;
+    text-overflow: ellipsis;
+    display: inline-block;
+    line-height: 1.8em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.module-logs,
+.prestashop-logs,
+.others-logs {
+    max-height: 300px;
+    overflow: scroll
+}
+
+.rollbacks-list h3,
+#pagespeed-result h3 {
+    margin: 17px 0 8.5px 0 !important;
+}
+
+#pagespeed-result .result-header .icon,
+#pagespeed-waiting .icon,
+#pagespeed-error .icon {
+    font-size: 5em;
+}
+
+#pagespeed-waiting,
+#pagespeed-error {
+
+    margin: 1em auto;
+    text-align: center;
+    display: inline-block;
+}
+
+#pagespeed-waiting .icon {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+    margin-bottom: .25em;
+}
+
+#pagespeed-waiting p,
+#pagespeed-error p {
+    font-size: 1.3em;
+    font-style: italic
+}
+
+#pagespeed-result {
+    text-align: center;
+}
+#pagespeed-result h3 {
+    padding-left: 2.2em !important;
+}
+
+#pagespeed-result h3 .badge {
+    border: 0 !important;
+}
+#pagespeed-result .ui-accordion  {
+    text-align: left;
+}
+#pagespeed-result .ui-widget-content {
+    border: none;
+}
+
+#pagespeed-result .ui-accordion .ui-accordion-content {
+    padding: 1em 0em;
+}
+
+#pagespeed-result .ui-accordion .ui-accordion-content small {
+    padding: 1em 0em;
+}
+
+#pagespeed-result  .ui-accordion-content td {
+    vertical-align: top !important;
+}
+
+#pagespeed-result  .result-header {
+    vertical-align: top !important;
+}
+
+#pagespeed-result  .ui-accordion-content td.text-danger,
+#pagespeed-result  .ui-accordion-content td.text-danger .help-block {
+    color: #F22 !important;
+}
+
+#pagespeed-result  .ui-accordion-content .badge,
+#pagespeed-result  .result-header .badge {
+    min-width: 3em;
+    min-height: 3em;
+    font-size: 1.5em;
+    line-height: 3em;
+}
+
+#pagespeed-result .badge.score-0 {
+    background: #F22 !important;
+    color: #fff !important;
+}
+
+#pagespeed-result .badge.score-1,
+#pagespeed-result .badge.score-2,
+#pagespeed-result .badge.score-3 {
+    background: #FA2 !important;
+    color: #fff !important;
+}
+
+#pagespeed-result .badge.score-4,
+#pagespeed-result .badge.score-5 {
+    background: #FD2 !important;
+    color: #000 !important;
+}
+
+#pagespeed-result .badge.score-6,
+#pagespeed-result .badge.score-7,
+#pagespeed-result .badge.score-8 {
+    background: #CD0 !important;
+    color: #000 !important;
+}
+
+#pagespeed-result .badge.score-9,
+#pagespeed-result .badge.score-10 {
+    background: #0C4 !important;
+    color: #fff !important;
+}
+
+
+
+
+.prestashop-logs li {
+    padding: 1em 0 ;
+    border-bottom: 1px solid silver;
+}
+
+.prestashop-logs li:first-child {
+    padding-top: 0 ;
+}
+
+.prestashop-logs li:last-child {
+    padding-bottom: 0 ;
+    border-bottom: 0;
+}
+#optimclean-tabs li {
+    cursor: pointer;
+}
+
+#optimclean-panels > * {
+    display: none;
+}
+
+#optimclean-panels .panel-footer .btn i[class^="icon-"],
+#runPageSpeedTest i[class^="icon-"] {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 28px;
+    background: transparent;
+    background-size: 26px;
+    background-position: center;
+}
+
+.col-lg-12.col-lg-offset-3 {
+    margin-left: 0;
+}
+
+#module-alerts .alert ul {
+    max-height: 250px;
+    overflow: scroll;
+}
+
+#module-alert-success.alert-loading:before,
+#module-alert-danger.alert-loading:before {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+    content: "\f1ce" !important;
+    height: 36px !important;
+    width: 36px !important;
+}
+
+
+@media (min-width: 1200px) {
+    #optimclean-view .form-group > .col-lg-3 {
+        width: 41.66667%;
+    }
+    #optimclean-view .form-group > .col-lg-9 {
+        width: 58.33333%;
+    }
+}

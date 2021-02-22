@@ -1,24 +1,5 @@
 <?php
-/**
- * 2007-2019 ETS-Soft
- *
- * NOTICE OF LICENSE
- *
- * This file is not open source! Each license that you purchased is only available for 1 wesite only.
- * If you want to use this file on more websites (or projects), you need to purchase additional licenses. 
- * You are not allowed to redistribute, resell, lease, license, sub-license or offer our resources to any third party.
- * 
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please contact us for extra customization service at an affordable price
- *
- *  @author ETS-Soft <etssoft.jsc@gmail.com>
- *  @copyright  2007-2019 ETS-Soft
- *  @license    Valid for 1 website (or project) for each purchase of license
- *  International Registered Trademark & Property of ETS-Soft
- */
+
 class Hook extends HookCore
 {   
     /*
@@ -40,5 +21,38 @@ class Hook extends HookCore
             $method='exec16';
             return call_user_func_array(array($class, $method),array($hook_name,$hook_args,$id_module,$array_return,$check_exceptions,$use_push,$id_shop));
         }
+    }
+    /*
+    * module: optimclean
+    * date: 2021-02-15 20:10:45
+    * version: 1.2.4
+    */
+    public static $handle_logs = null;
+    /*
+    * module: optimclean
+    * date: 2021-02-15 20:10:45
+    * version: 1.2.4
+    */
+    public static function coreCallHook($module, $method, $params)
+    {
+        $time_start = microtime(true);
+        $r = $module->{$method}($params);
+        $time_end = microtime(true);
+        $duration = number_format($time_end - $time_start, 2);
+        if ($duration >= 3) {
+            if (self::$handle_logs === null) {
+                if (is_writable(_PS_ROOT_DIR_.'/app/logs/')) {
+                    self::$handle_logs = fopen(_PS_ROOT_DIR_.'/app/logs/modules_logs.txt', 'a+');
+                }
+            }
+            if (self::$handle_logs) {
+                fwrite(
+                    self::$handle_logs,
+                    '['.date('Y-m-d H:i:s').'] Execution time for module '.
+                    $module->name.' on Hook '.$method.' : '.$duration.' seconds'."\n"
+                );
+            }
+        }
+        return $r;
     }
 }

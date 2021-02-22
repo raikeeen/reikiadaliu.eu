@@ -17,27 +17,14 @@
 *  International Registered Trademark & Property of Paysera
 *}
 
+
+
 <div class="row">
     <div class="col-xs-12">
         <p class="payment_module">
-            <a class="paysera-payment-choice"
-               href="{if $payments|escape:'htmlall':'UTF-8'}#{else}{$redirect|escape:'htmlall':'UTF-8'}{/if}">
-                {$title|escape:'htmlall':'UTF-8'}<br><span>{$description|escape:'htmlall':'UTF-8'}</span>
-            </a>
+        <div class="paysera-payment-choice-extension">
+            {$payments nofilter}
+        </div>
         </p>
-        {if $payments|escape:'htmlall':'UTF-8'}
-            <div class="paysera-payment-choice-extension">
-                {$payments nofilter}
-                <a href="{$redirect|escape:'htmlall':'UTF-8'}"
-                   id="payseraPaySubmit"
-                   class="button btn btn-default button-medium"
-                   data-paysera-redirect="{$redirect|escape:'htmlall':'UTF-8'}">
-                    <span>
-                        {l s='I confirm my order' mod='paysera'}
-                        <i class="icon-chevron-right right"></i>
-                    </span>
-                </a>
-            </div>
-        {/if}
     </div>
 </div>

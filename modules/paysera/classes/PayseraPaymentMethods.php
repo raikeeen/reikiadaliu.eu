@@ -98,6 +98,11 @@ class PayseraPaymentMethods
     protected $gridView;
 
     /**
+     * @var boolean
+     */
+    protected $buyerConsent;
+
+    /**
      * @var string
      */
     protected $description;
@@ -116,6 +121,11 @@ class PayseraPaymentMethods
      * Available languages of payments
      */
     protected $availableLang;
+
+    /**
+     * @var array
+     */
+    protected $buyerConsentTranslations;
 
     /**
      * @return self
@@ -139,6 +149,7 @@ class PayseraPaymentMethods
         $this->description       = $this::DEFAULT_ANSWER;
         $this->cartTotal         = $this::DEFAULT_TOTAL;
         $this->cartCurrency      = $this::DEFAULT_CURRENCY;
+        $this->buyerConsentTranslations = $this::EMPTY_CODE;
     }
 
     /**
@@ -185,6 +196,17 @@ class PayseraPaymentMethods
             $paymentsHtml = $this->getDescription();
         }
 
+        $buyerConsentTranslations = $this->getBuyerConsentTranslations();
+
+        if ($this->isBuyerConsent()) {
+            $paymentsHtml .= $this::LINE_BREAK;
+            $paymentsHtml .= sprintf(
+                $buyerConsentTranslations['description'],
+                '<a href="' . $buyerConsentTranslations['link'] . '"> ' . $buyerConsentTranslations['rules']  .'</a>'
+            );
+            $paymentsHtml .= $this::LINE_BREAK;
+        }
+
         if ($print) {
             print_r($paymentsHtml);
             return $print;
@@ -203,15 +225,15 @@ class PayseraPaymentMethods
      */
     protected function getPayseraCountries($project, $amount, $currency, $lang)
     {
-        $countries = WebToPay::getPaymentMethodList(
-            $project,
-            $currency
-        )->filterForAmount(
-            $amount,
-            $currency
-        )->setDefaultLanguage(
-            $lang
-        )->getCountries();
+        try {
+            $countries = WebToPay::getPaymentMethodList($project, $currency)
+                ->filterForAmount($amount, $currency)
+                ->setDefaultLanguage($lang)
+                ->getCountries()
+            ;
+        } catch (WebToPayException $exception) {
+            return [];
+        }
 
         return $countries;
     }
@@ -358,6 +380,25 @@ class PayseraPaymentMethods
     }
 
     /**
+     * @return boolean
+     */
+    public function isBuyerConsent()
+    {
+        return $this->buyerConsent;
+    }
+
+    /**
+     * @param boolean $buyerConsent
+     *
+     * @return self
+     */
+    public function setBuyerConsent($buyerConsent)
+    {
+        $this->buyerConsent = $buyerConsent;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getDescription()
@@ -449,6 +490,25 @@ class PayseraPaymentMethods
     public function setAvailableLang($availableLang)
     {
         $this->availableLang = $availableLang;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getBuyerConsentTranslations()
+    {
+        return $this->buyerConsentTranslations;
+    }
+
+    /**
+     * @param array $buyerConsentTranslations
+     *
+     * @return self
+     */
+    public function setBuyerConsentTranslations($buyerConsentTranslations)
+    {
+        $this->buyerConsentTranslations = $buyerConsentTranslations;
         return $this;
     }
 }

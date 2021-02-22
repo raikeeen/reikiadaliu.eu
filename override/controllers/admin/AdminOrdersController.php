@@ -6,13 +6,13 @@ class AdminOrdersController extends AdminOrdersControllerCore
      */
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private $lp_module;
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     public function __construct()
@@ -29,7 +29,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     public function setMedia($isNewTheme = false)
@@ -54,7 +54,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     public function initPageHeaderToolbar()
@@ -68,7 +68,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     public function postProcess()
@@ -377,7 +377,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function saveLPOrder($id_order)
@@ -477,7 +477,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function submitLPOrders($id_orders)
@@ -710,7 +710,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function cancelLPOrders($id_orders)
@@ -832,7 +832,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function getLPLabel($id_orders)
@@ -897,7 +897,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function getLPManifest($id_orders)
@@ -962,7 +962,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function callCarrier($id_orders)
@@ -1082,7 +1082,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function validateLPOrder(LPOrder $lp_order, $id_carrier)
@@ -1205,7 +1205,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function formatPhoneNumber($phone)
@@ -1216,7 +1216,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     private function formatErrorArray($errors, $display_id_order = false)
@@ -1252,7 +1252,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
     }
     /*
     * module: lpexpress
-    * date: 2020-10-07 14:45:14
+    * date: 2021-02-22 09:40:39
     * version: 1.0.9
     */
     public function refreshPS16ShippingCost(Order $order, OrderCarrier $order_carrier)

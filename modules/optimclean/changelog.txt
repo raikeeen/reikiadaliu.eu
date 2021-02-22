@@ -1,0 +1,82 @@
+## [1.2.4] - 2018-10-16
+- Remove PS_HTML_THEME_COMPRESSION, PS_JS_HTML_THEME_COMPRESSION, PS_HTACCESS_CACHE_CONTROL, PS_JS_DEFER controls for ps < 1.7
+
+## [1.2.3] - 2018-06-25
+- Improved PM Subscription compatibility
+- Fix on customer group configuration
+- Use SSL for performances test
+
+## [1.2.2] - 2017-05-03
+- Improved 1.7 compatibility
+- Add PrestaTrust
+
+## [1.2.1] - 2017-12-28
+- Fix Call to undefined method Tools::recurseCopy
+
+## [1.2.0] - 2017-07-03
+- Fix Call to undefined method Tools::file_exists_no_cache
+
+## [1.1.9] - 2017-06-01
+- More detailed logs
+- Many corrections in images process
+- Do not remove categories thumbs images
+
+## [1.1.8] - 2017-06-01
+- Splits large queries
+- Do not remove watermark images
+
+## [1.1.6] - 2017-04-27
+- Fix override install on 1.5.x
+
+## [1.1.5] - 2017-03-23
+- New feature : clean your images
+- Add guest type choice in cron task
+- New feature : delete useless attributes
+
+## [1.1.4] - 2017-03-17
+- Improved override installation
+
+## [1.1.3] - 2017-02-06
+- Fix cart rules dump creation
+- Add param date to specifics prices
+- Add param date to cart_rules
+- Fix query for specifics prices
+- Fix query for cart_rules
+- Use https in pagespeed test
+
+## [1.1.1] - 2016-12-28
+- Fix missing folder notfounds
+- Remove useless lang in lost joins
+
+## [1.1.0] - 2016-11-08
+- Use PDO if PHP >= 7
+
+## [1.0.9] - 2016-05-04
+- Bug fix in secure_key verification in task cron
+- Missing param in guest cron task
+
+## [1.0.8] - 2016-04-13
+- Add more options in limit field
+- Add remove « Page not founds »
+
+## [1.0.6] - 2016-02-23
+- Rename function renderExceptionLogs
+- Remove escape on about HTML when task in progress failed
+
+## [1.0.5] - 2016-02-23
+- Add upgrade of memory_limit
+- Fix in date picker call
+
+## [1.0.4] - 2016-02-17
+- Fix slow modules log in hook override
+
+## [1.0.3] - 2016-02-15
+- Fix rollback name 'backup-backup'
+
+## [1.0.2] - 2016-02-15
+- Fix rollback list notices if empty
+- Fix media server and cache warnings
+
+## [1.0.1] - 2016-01-14
+- Fixed limits in some SQL queries
+- Remove HTML escape of tables rollbacks
