@@ -2077,7 +2077,7 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-        if($response['success'] = true) {
+       /* if($response['success'] = true) {*/
            /* $servername = "localhost";
             $username = "Admin";
             $password = "DFfgdde467%$#d";
@@ -2100,10 +2100,10 @@ VALUES ($post_lp->id_cart, $post_lp->id_order, $post_lp->id_terminal,0,'terminal
             }
 
             $conn->close();*/
-        }
-        $smarty = new Smarty();
+        /*}*/
+        /*$smarty = new Smarty();
         $smarty->assign('post', $post_lp);
-        $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');
+        $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');*/
         return $response;
     }
 
