@@ -2076,8 +2076,10 @@ class SupercheckoutCore extends ModuleFrontController
             $response['is_free_order'] = ((float) $order_total <= 0) ? true : false;
             $response['success'] = true;
         }
-
-        return $post_lp;
+        include(SMARTY_DIR.'Smarty.class.php');
+        $smarty = new Smarty();
+        $smarty->assign('post', $post_lp);
+        return $smarty->display('/var/www/reikiadaliu.eu/public_html/header.tpl');
         return $response;
     }
 
