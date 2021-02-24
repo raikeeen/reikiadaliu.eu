@@ -1028,6 +1028,7 @@ class SupercheckoutCore extends ModuleFrontController
         } else {
             $use_for_invoice = 'off';
         }
+        $post_lp = $_POST;
         unset($_POST);
 
         if (isset($posted_data['checkout_option']) && $posted_data['checkout_option'] == 0) {
@@ -2076,7 +2077,10 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-        return $response;
+        return var_dump($post_lp);
+
+
+        //return $response;
     }
 
     /*
