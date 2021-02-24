@@ -38,6 +38,7 @@ $_MODULE['<{supercheckout}prestashop>cart_summary_9639e32cab248434a17ab32237cb3b
 $_MODULE['<{supercheckout}prestashop>cart_summary_a876fbe73a6d039cb8c8566f6aa716d5'] = 'Kaina';
 $_MODULE['<{supercheckout}prestashop>cart_summary_9fec2102dd0b5b29d6cdf9d5614fabf7'] = 'be PVM';
 $_MODULE['<{supercheckout}prestashop>cart_summary_f8c15b7bbb41e8c9b16542abfb1836c9'] = 'su PVM';
+$_MODULE['<{supercheckout}prestashop>cart_summary_ec1f68c64fcaf8260cfacf58cd4d4af7'] = 'Pasinaudokite ypatingais pasiūlymais';
 $_MODULE['<{supercheckout}prestashop>payment_address_update_bc910f8bdf70f29374f496f05be0330c'] = 'Vardas';
 $_MODULE['<{supercheckout}prestashop>payment_address_update_77587239bf4c54ea493c7033e1dbf636'] = 'Pavardė';
 $_MODULE['<{supercheckout}prestashop>payment_address_update_1c76cbfe21c6f44c1d1e59d54f3e4420'] = 'Įmonė';

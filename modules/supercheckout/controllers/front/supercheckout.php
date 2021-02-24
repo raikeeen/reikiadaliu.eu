@@ -3620,5 +3620,4 @@ class SupercheckoutSupercheckoutModuleFrontController extends SupercheckoutCore
 
         return $ip_data;
     }
-
 }

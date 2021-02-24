@@ -229,8 +229,8 @@
 
 <div id="highlighted_cart_rules">
     {if count($other_available_vouchers) > 0}
-        <p id="title" class="title-offers" style="font-weight: 600;color: black!important;">{l s='Take advantage of our exclusive offers' mod='supercheckout'}:</p>
-        <div id="display_cart_vouchers">
+        <h2 id="title" class="title-offers supercheckout-blocks confirmCheckoutBack" style="font-weight: 600;color: black!important;">{l s='Take advantage of our exclusive offers' mod='supercheckout'}:</h2>
+        <div id="display_cart_vouchers" style="font-weight: 600;padding: 0px 0px 10px 3px;">
             {foreach $other_available_vouchers as $voucher}
                 {if $voucher.code != ''}<span onclick="$('#discount_name').val('{$voucher.code}');
                         return false;" class="voucher_name" data-code="{$voucher.code}">{$voucher.code}</span> - {/if}{$voucher.name}<br />

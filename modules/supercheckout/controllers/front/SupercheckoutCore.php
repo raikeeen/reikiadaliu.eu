@@ -1028,7 +1028,6 @@ class SupercheckoutCore extends ModuleFrontController
         } else {
             $use_for_invoice = 'off';
         }
-        $post_lp = $_POST;
         unset($_POST);
 
         if (isset($posted_data['checkout_option']) && $posted_data['checkout_option'] == 0) {
@@ -2077,33 +2076,6 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-       /* if($response['success'] = true) {*/
-           /* $servername = "localhost";
-            $username = "Admin";
-            $password = "DFfgdde467%$#d";
-            $dbname = "reikiadaliu";
-
-// Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal, id_lpexpress_box, 'type', packets, cod, cod_amount) 
-VALUES ($post_lp->id_cart, $post_lp->id_order, $post_lp->id_terminal,0,'terminal',1,0,$post_lp->cart_total)";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-
-            $conn->close();*/
-        /*}*/
-        /*$smarty = new Smarty();
-        $smarty->assign('post', $post_lp);
-        $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');*/
         return $response;
     }
 
