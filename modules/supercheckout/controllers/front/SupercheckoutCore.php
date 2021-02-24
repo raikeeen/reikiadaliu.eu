@@ -2077,8 +2077,7 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-        var_dump($post_lp);
-        var_dump('');
+        dd($post_lp);
         return $response;
     }
 
