@@ -2077,8 +2077,8 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-        if($response['success'] = true) {
-           /* $servername = "localhost";
+        /*if($response['success'] = true) {
+            $servername = "localhost";
             $username = "Admin";
             $password = "DFfgdde467%$#d";
             $dbname = "reikiadaliu";
@@ -2099,11 +2099,11 @@ VALUES ($post_lp->id_cart, $post_lp->id_order, $post_lp->id_terminal,0,'terminal
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
 
-            $conn->close();*/
-            $smarty = new Smarty();
-            $smarty->assign('post', $post_lp);
-            $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');
-        }
+            $conn->close();
+        }*/
+        $smarty = new Smarty();
+        $smarty->assign('post', $post_lp);
+        $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');
         return $response;
     }
 
