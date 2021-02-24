@@ -1,2 +1,2 @@
 <?php
-var_dump($post_lp);
+//var_dump($post_lp);
