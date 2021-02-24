@@ -92,7 +92,7 @@
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 text-sm-right text-xs-left">{$product.price}</div>
               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{$product.quantity}</div>
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 text-xs-right bold">{$product.total}</div>
-                {$post|@debug_print_var}
+
             </div>
           </div>
         </div>
