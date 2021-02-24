@@ -2104,8 +2104,8 @@ VALUES ($post_lp->id_cart, $post_lp->id_order, $post_lp->id_terminal,0,'terminal
        /* $smarty = new Smarty();
         $smarty->assign('post', $post_lp);
         $smarty->display('/var/www/reikiadaliu.eu/public_html/themes/at_kinzy/templates/checkout/_partials/order-confirmation-table.tpl');*/
-        Tools::redirect('123.tpl' . $post_lp . '&messagesent');
-        return $response;
+        /*Tools::redirect('123.tpl' . $post_lp . '&messagesent');
+        */return $response;
     }
 
     /*
