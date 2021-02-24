@@ -2077,9 +2077,9 @@ class SupercheckoutCore extends ModuleFrontController
             $response['success'] = true;
         }
 
-        $smarty = new Smarty();
+       /* $smarty = new Smarty();
         $smarty->assign('post', $post_lp);
-        return $smarty->display('/var/www/reikiadaliu.eu/public_html/header.tpl');
+        return $smarty->display('/var/www/reikiadaliu.eu/public_html/header.tpl');*/
         return $response;
     }
 
