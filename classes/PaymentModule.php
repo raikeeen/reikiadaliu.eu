@@ -584,6 +584,8 @@ abstract class PaymentModuleCore extends Module
                         die("Connection failed: " . $conn->connect_error);
                     }
                     var_dump($order);
+                    var_dump();
+                        var_dump($order->id);
                     $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');
                     /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
 VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";*/
