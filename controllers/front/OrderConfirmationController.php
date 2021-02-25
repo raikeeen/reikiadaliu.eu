@@ -115,7 +115,7 @@ class OrderConfirmationControllerCore extends FrontController
         var_dump("1232312312312312312312312");
         var_dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
         var_dump("22222222");
-        dump($this->context->cart->id_terminal);
+        dump($this->context->cart->id_lpexpress_terminal);
     }
 
     /**
