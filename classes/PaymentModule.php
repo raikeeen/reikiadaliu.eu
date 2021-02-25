@@ -586,7 +586,7 @@ abstract class PaymentModuleCore extends Module
                     $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');
                     /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
 VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";*/
-                    $sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
+                    $sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,type,weight,packets,cod,cod_amount)
 VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
                     if ($conn->query($sql) === TRUE) {
                         echo "New record created successfully";
