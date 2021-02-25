@@ -2080,7 +2080,7 @@ class Supercheckout extends Module
         {
             $this->logger->error('Error occurs while saving LPOrder object.', ['id_order' => $order->id, 'id_cart' => $cart->id, 'id_carrier' => $order->id_carrier]);
         }
-
+        return true;
 
     }
 
