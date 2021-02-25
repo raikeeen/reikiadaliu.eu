@@ -122,7 +122,7 @@ class OrderConfirmationControllerCore extends FrontController
                 'selected_terminal' => $lp_order->id_lpexpress_terminal,
             ]);
         }
-        dump($lp_order->id_lpexpress_terminal);
+        /*dump($lp_order->id_lpexpress_terminal);
         var_dump("444");
         dump($shops = Shop::getShops(true, null, true));
         var_dump("1232312312312312312312312");
@@ -130,7 +130,7 @@ class OrderConfirmationControllerCore extends FrontController
         var_dump("22222222");
         dump(Tools::getValue('id_terminal'));
         dump(Context::getContext());
-        dump($this->context->cart->id_terminal);
+        dump($this->context->cart->id_terminal);*/
     }
 
     /**

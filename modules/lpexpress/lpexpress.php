@@ -478,14 +478,14 @@ class LPExpress extends CarrierModule
         $lp_order = new LPOrder();
         $lp_order->loadByCartID($cart->id);
 
-        if (!in_array($order->id_carrier, $lp_carriers))
+        /*if (!in_array($order->id_carrier, $lp_carriers))
         {
             if (Validate::isLoadedObject($lp_order))
             {
                 $lp_order->delete();
             }
             return true;
-        }
+        }*/
 
         if (!Validate::isLoadedObject($lp_order))
         {
