@@ -206,7 +206,6 @@ abstract class PaymentModuleCore extends Module
     public function validateOrder(
         $id_cart,
         $id_order_state,
-        $params,
         $amount_paid,
         $payment_method = 'Unknown',
         $message = null,
@@ -584,7 +583,7 @@ abstract class PaymentModuleCore extends Module
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                     }
-                    var_dump($order);
+                    /*var_dump($order);
                     var_dump("1232312312312312312312312");
                         var_dump($order->id);
                     var_dump("1232312312312312312312312");
@@ -595,10 +594,10 @@ abstract class PaymentModuleCore extends Module
                     var_dump("1232312312312312312312312");
                     var_dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
                     dump($params);
-                    $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');
+                    $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');*/
                     /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
 VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";*/
-                    $sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,type,weight,packets,cod,cod_amount)
+                    /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,type,weight,packets,cod,cod_amount)
 VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
                     if ($conn->query($sql) === TRUE) {
                         echo "New record created successfully";
@@ -606,7 +605,7 @@ VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
 
-                    $conn->close();
+                    $conn->close();*/
 
                     // Send an e-mail to customer (one order = one email)
                     if ($id_order_state != Configuration::get('PS_OS_ERROR') && $id_order_state != Configuration::get('PS_OS_CANCELED') && $this->context->customer->id) {

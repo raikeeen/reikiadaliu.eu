@@ -30,6 +30,7 @@ class CartControllerCore extends FrontController
     public $php_self = 'cart';
 
     protected $id_product;
+    protected $id_terminal;
     protected $id_product_attribute;
     protected $id_address_delivery;
     protected $customization_id;
@@ -71,6 +72,7 @@ class CartControllerCore extends FrontController
 
         // Get page main parameters
         $this->id_product = (int) Tools::getValue('id_product', null);
+        $this->id_terminal = (int) Tools::getValue('id_lpexpress_terminal', null);
         $this->id_product_attribute = (int) Tools::getValue('id_product_attribute', Tools::getValue('ipa'));
         $this->customization_id = (int) Tools::getValue('id_customization');
         $this->qty = abs(Tools::getValue('qty', 1));

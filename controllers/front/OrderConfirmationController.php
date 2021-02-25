@@ -103,7 +103,19 @@ class OrderConfirmationControllerCore extends FrontController
             /* If guest we clear the cookie for security reason */
             $this->context->customer->mylogout();
         }
+
         $this->setTemplate('checkout/order-confirmation');
+        var_dump("1232312312312312312312312");
+        var_dump($order->id);
+        var_dump("1232312312312312312312312");
+        var_dump($this->context->cart);
+        var_dump("1232312312312312312312312");
+        var_dump("1232312312312312312312312");
+        var_dump($shops = Shop::getShops(true, null, true));
+        var_dump("1232312312312312312312312");
+        var_dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
+        var_dump("22222222");
+        dump($this->context->cart->id_terminal);
     }
 
     /**
