@@ -26,16 +26,11 @@
 if (!defined('_PS_VERSION_')) {
     exit;
 }
-require_once('modules/lpexpress/classes/BalticPostAPI.php');
-require_once('modules/lpexpress/classes/Logger.php');
-require_once('modules/lpexpress/classes/Terminal.php');
-require_once('modules/lpexpress/classes/BoxSize.php');
-require_once('modules/lpexpress/classes/LPOrder.php');
-require_once('modules/lpexpress/classes/BalticPostAPI.php');
-require_once('modules/lpexpress/classes/Logger.php');
-require_once('modules/lpexpress/classes/Terminal.php');
-require_once('modules/lpexpress/classes/BoxSize.php');
-
+require_once(dirname(__FILE__).'/classes/BalticPostAPI.php');
+require_once(dirname(__FILE__).'/classes/Logger.php');
+require_once(dirname(__FILE__).'/classes/Terminal.php');
+require_once(dirname(__FILE__).'/classes/BoxSize.php');
+require_once(dirname(__FILE__).'/classes/LPOrder.php');
 include_once dirname(__FILE__) . '/classes/supercheckout_configuration.php';
 
 class Supercheckout extends Module
