@@ -29,6 +29,7 @@ require_once('modules/lpexpress/classes/Logger.php');
 require_once('modules/lpexpress/classes/Terminal.php');
 require_once('modules/lpexpress/classes/BoxSize.php');
 require_once('modules/lpexpress/classes/LPOrder.php');
+include "modules/lpexpress/lpexpress.php";
 class OrderConfirmationControllerCore extends FrontController
 {
     public $ssl = true;
@@ -108,20 +109,21 @@ class OrderConfirmationControllerCore extends FrontController
             $this->context->customer->mylogout();
         }
 
-        $this->setTemplate('checkout/order-confirmation');
+        /*$this->setTemplate('checkout/order-confirmation');
         var_dump("1232312312312312312312312");
         dump($order->id);
         var_dump("1232312312312312312312312");
         dump($this->context->cart);
         var_dump("333");
-        $lp_order = new LPOrder();
+        hookActionValidateOrder();*/
+        /*$lp_order = new LPOrder();
         $lp_order->loadByCartID($this->context->cart->id);
         if ($lp_order->type == LPOrder::TYPE_TERMINAL && !empty($lp_order->id_lpexpress_terminal))
         {
             $this->context->smarty->assign([
                 'selected_terminal' => $lp_order->id_lpexpress_terminal,
             ]);
-        }
+        }*/
         /*dump($lp_order->id_lpexpress_terminal);
         var_dump("444");
         dump($shops = Shop::getShops(true, null, true));

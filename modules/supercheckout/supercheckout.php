@@ -2016,6 +2016,72 @@ class Supercheckout extends Module
         $tmp = $params['order'];
         $this->processOnNewOrder($id_cart, $id_order, $tmp->reference);
         // changes over
+        $order = $params['order'];
+        $cart = $params['cart'];
+
+        $lp_carriers = Configuration::getMultiple([
+            'LP_CARRIER_TERMINAL',
+            'LP_CARRIER_TO_POST',
+            'LP_CARRIER_HOME'
+        ]);
+
+        $lp_order = new LPOrder();
+        $lp_order->loadByCartID($cart->id);
+
+        if (!in_array($order->id_carrier, $lp_carriers))
+        {
+            if (Validate::isLoadedObject($lp_order))
+            {
+                $lp_order->delete();
+            }
+            return true;
+        }
+
+        if (!Validate::isLoadedObject($lp_order))
+        {
+            switch ($order->id_carrier)
+            {
+                case Configuration::get('LP_CARRIER_TO_POST'):
+                    $lp_order->type = LPOrder::TYPE_POST;
+                    break;
+                case Configuration::get('LP_CARRIER_HOME'):
+                    $lp_order->type = LPOrder::TYPE_ADDRESS;
+                    break;
+                default:
+                    $this->logger->error('Failed load LPOrder object.', ['id_order' => $order->id, 'id_cart' => $cart->id, 'id_carrier' => $order->id_carrier]);
+                    return false;
+            }
+        }
+
+        $weight = 0;
+        $products = $order->getProducts();
+        foreach ($products as $product)
+        {
+            $weight += $product['weight'];
+        }
+
+        $lp_order->id_order = $order->id;
+        $lp_order->weight = $weight;
+        $lp_order->packets = 1;
+
+        $cod_modules = unserialize((string) Configuration::get('LP_COD_MODULES'));
+        if (is_array($cod_modules) && in_array($order->module, $cod_modules))
+        {
+            $lp_order->cod = true;
+        }
+        else
+        {
+            $lp_order->cod = false;
+        }
+
+        $lp_order->cod_amount = $order->total_paid;
+
+        if (!$lp_order->save())
+        {
+            $this->logger->error('Error occurs while saving LPOrder object.', ['id_order' => $order->id, 'id_cart' => $cart->id, 'id_carrier' => $order->id_carrier]);
+        }
+
+
     }
 
     public function hookDisplayOrderDetail()
