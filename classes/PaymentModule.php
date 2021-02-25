@@ -572,7 +572,7 @@ abstract class PaymentModuleCore extends Module
                     $order = new Order((int) $order->id);
 
                     //Lp express terminal
-                    $servername = "localhost";
+                    /*$servername = "localhost";
                     $username = "Admin";
                     $password = "DFfgdde467%$#d";
                     $dbname = "reikiadaliu";
@@ -592,7 +592,7 @@ VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
 
-                    $conn->close();
+                    $conn->close();*/
 
                     // Send an e-mail to customer (one order = one email)
                     if ($id_order_state != Configuration::get('PS_OS_ERROR') && $id_order_state != Configuration::get('PS_OS_CANCELED') && $this->context->customer->id) {
