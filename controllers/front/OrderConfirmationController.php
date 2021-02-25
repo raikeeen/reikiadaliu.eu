@@ -116,6 +116,7 @@ class OrderConfirmationControllerCore extends FrontController
         dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
         var_dump("22222222");
         dump(Tools::getValue('id_terminal'));
+        dump(Tools::getValue('action'));
         dump($this->context->cart->id_terminal);
     }
 
