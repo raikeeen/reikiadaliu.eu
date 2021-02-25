@@ -27,9 +27,9 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-require_once(dirname(__FILE__).'/classes/Terminal.php');
-require_once(dirname(__FILE__).'/classes/BoxSize.php');
-require_once(dirname(__FILE__).'/classes/LPOrder.php');
+//require_once(dirname(__FILE__).'/classes/Terminal.php');
+//require_once(dirname(__FILE__).'/classes/BoxSize.php');
+//require_once(dirname(__FILE__).'/classes/LPOrder.php');
 
 include_once dirname(__FILE__) . '/classes/supercheckout_configuration.php';
 
