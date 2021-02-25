@@ -109,8 +109,9 @@ class OrderConfirmationControllerCore extends FrontController
         dump($order->id);
         var_dump("1232312312312312312312312");
         dump($this->context->cart);
-        var_dump("1232312312312312312312312");
-        var_dump("1232312312312312312312312");
+        var_dump("333");
+        dump($_POST['page']);
+        var_dump("444");
         dump($shops = Shop::getShops(true, null, true));
         var_dump("1232312312312312312312312");
         dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
