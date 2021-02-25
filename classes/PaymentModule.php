@@ -572,13 +572,13 @@ abstract class PaymentModuleCore extends Module
                     $order = new Order((int) $order->id);
 
                     //Lp express terminal
-                   /* $servername = "localhost";
+                    $servername = "localhost";
                     $username = "Admin";
                     $password = "DFfgdde467%$#d";
                     $dbname = "reikiadaliu";
 
 // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    $conn = new mysqli($servername, $username, $password, $dbname);/*
 // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
