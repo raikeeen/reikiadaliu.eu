@@ -27,10 +27,6 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-//require_once(dirname(__FILE__).'/classes/Terminal.php');
-//require_once(dirname(__FILE__).'/classes/BoxSize.php');
-//require_once(dirname(__FILE__).'/classes/LPOrder.php');
-
 include_once dirname(__FILE__) . '/classes/supercheckout_configuration.php';
 
 class Supercheckout extends Module
@@ -2020,71 +2016,42 @@ class Supercheckout extends Module
         $tmp = $params['order'];
         $this->processOnNewOrder($id_cart, $id_order, $tmp->reference);
         // changes over
-        $order = $params['order'];
-        $cart = $params['cart'];
 
-        $lp_carriers = Configuration::getMultiple([
-            'LP_CARRIER_TERMINAL',
-            'LP_CARRIER_TO_POST',
-            'LP_CARRIER_HOME'
-        ]);
+        $servername = "localhost";
+        $username = "Admin";
+        $password = "DFfgdde467%$#d";
+        $dbname = "reikiadaliu";
 
-        $lp_order = new LPOrder();
-        $lp_order->loadByCartID($cart->id);
-
-        if (!in_array($order->id_carrier, $lp_carriers))
-        {
-            if (Validate::isLoadedObject($lp_order))
-            {
-                $lp_order->delete();
-            }
-            return true;
+// Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        var_dump($params);
+        /*var_dump($order);
+        var_dump("1232312312312312312312312");
+            var_dump($order->id);
+        var_dump("1232312312312312312312312");
+        var_dump($this->context->cart);
+        var_dump("1232312312312312312312312");
+        var_dump("1232312312312312312312312");
+        var_dump($shops = Shop::getShops(true, null, true));
+        var_dump("1232312312312312312312312");
+        var_dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
+        dump($params);
+        $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');*/
+        /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
+VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";*/
+        /*$sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,type,weight,packets,cod,cod_amount)
+VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
 
-        if (!Validate::isLoadedObject($lp_order))
-        {
-            switch ($order->id_carrier)
-            {
-                case Configuration::get('LP_CARRIER_TO_POST'):
-                    $lp_order->type = LPOrder::TYPE_POST;
-                    break;
-                case Configuration::get('LP_CARRIER_HOME'):
-                    $lp_order->type = LPOrder::TYPE_ADDRESS;
-                    break;
-                default:
-                    $this->logger->error('Failed load LPOrder object.', ['id_order' => $order->id, 'id_cart' => $cart->id, 'id_carrier' => $order->id_carrier]);
-                    return false;
-            }
-        }
-
-        $weight = 0;
-        $products = $order->getProducts();
-        foreach ($products as $product)
-        {
-            $weight += $product['weight'];
-        }
-
-        $lp_order->id_order = $order->id;
-        $lp_order->weight = $weight;
-        $lp_order->packets = 1;
-
-        $cod_modules = unserialize((string) Configuration::get('LP_COD_MODULES'));
-        if (is_array($cod_modules) && in_array($order->module, $cod_modules))
-        {
-            $lp_order->cod = true;
-        }
-        else
-        {
-            $lp_order->cod = false;
-        }
-
-        $lp_order->cod_amount = $order->total_paid;
-
-        if (!$lp_order->save())
-        {
-            $this->logger->error('Error occurs while saving LPOrder object.', ['id_order' => $order->id, 'id_cart' => $cart->id, 'id_carrier' => $order->id_carrier]);
-        }
-        return true;
+        $conn->close();*/
 
     }
 
