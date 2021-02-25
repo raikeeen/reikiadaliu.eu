@@ -110,7 +110,7 @@ class OrderConfirmationControllerCore extends FrontController
         var_dump("1232312312312312312312312");
         dump($this->context->cart);
         var_dump("333");
-        dump($_POST['page']);
+        dump($_POST['id_lpexpress_terminal']);
         var_dump("444");
         dump($shops = Shop::getShops(true, null, true));
         var_dump("1232312312312312312312312");
