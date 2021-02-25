@@ -106,16 +106,16 @@ class OrderConfirmationControllerCore extends FrontController
 
         $this->setTemplate('checkout/order-confirmation');
         var_dump("1232312312312312312312312");
-        var_dump($order->id);
+        dump($order->id);
         var_dump("1232312312312312312312312");
-        var_dump($this->context->cart);
+        dump($this->context->cart);
         var_dump("1232312312312312312312312");
         var_dump("1232312312312312312312312");
-        var_dump($shops = Shop::getShops(true, null, true));
+        dump($shops = Shop::getShops(true, null, true));
         var_dump("1232312312312312312312312");
-        var_dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
+        dump($carriers = Carrier::getCarriers((int) Context::getContext()->language->id));
         var_dump("22222222");
-        dump((int) Tools::getValue('id_lpexpress_terminal', null));
+        dump((int) Tools::getValue('id_lpexpress_terminal'));
     }
 
     /**
