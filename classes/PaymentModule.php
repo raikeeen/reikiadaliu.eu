@@ -578,12 +578,12 @@ abstract class PaymentModuleCore extends Module
                     $dbname = "reikiadaliu";
 
 // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);/*
+                    $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                     }
-                    $terminal = $this->getRequest()->getPost('id_lpexpress_terminal')
+                    $terminal = $this->getRequest()->getPost('id_lpexpress_terminal');
                     $sql = "INSERT INTO ps_lpexpress_terminal_order (id_cart, id_order, id_lpexpress_terminal,id_lpexpress_box,'type',weight,packets,cod,cod_amount)
 VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";
                     if ($conn->query($sql) === TRUE) {
@@ -592,7 +592,7 @@ VALUES ($id_cart, $order->id, $terminal,0,'terminal',0,1,1,$amount_paid)";
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
 
-                    $conn->close();*/
+                    $conn->close();
 
                     // Send an e-mail to customer (one order = one email)
                     if ($id_order_state != Configuration::get('PS_OS_ERROR') && $id_order_state != Configuration::get('PS_OS_CANCELED') && $this->context->customer->id) {
