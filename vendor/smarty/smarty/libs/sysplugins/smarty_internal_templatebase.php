@@ -174,7 +174,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
         $saveVars = true;
         if ($template === null) {
             if (!$this->_isTplObj()) {
-                throw new SmartyException($function . '():Missing \'$template\' parameter');
+                //throw new SmartyException($function . '():Missing \'$template\' parameter');
             } else {
                 $template = $this;
             }
