@@ -26,19 +26,7 @@
  <div class="effect-layla">
  	<a class="banner" href="{$banner_link}" title="{$banner_desc}">
 	  {if isset($banner_img)}
-	    <img src="{if isset($ets_link_base)}{$ets_link_base}/modules/ets_superspeed/views/img/preloading.png{else}{$banner_img}{/if}" class="lazyload" data-src="{$banner_img}" alt="{$banner_desc}" title="{$banner_desc}" class="img-fluid"><span class="ets_loading">
-{if isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_1'}
-    <div class="spinner_1"></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_2'}
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_3'}
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_4'}
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_5'}
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{/if}
-</span>
+	    <img src="{$banner_img}" alt="{$banner_desc}" title="{$banner_desc}" class="img-fluid">
 	  {else}
 	    <span>{$banner_desc}</span>
 	  {/if}

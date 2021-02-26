@@ -29,41 +29,19 @@
       {block name='product_thumbnail'}
 				{if $product.cover}
 					<a href="{$product.url}" class="thumbnail product-thumbnail">
-						<img src="{if isset($ets_link_base)}{$ets_link_base}/modules/ets_superspeed/views/img/preloading.png{else}{$product.cover.bySize.home_default.url}{/if}" class="lazyload" data-src="{$product.cover.bySize.home_default.url}"
+						<img
+							class="img-fluid"
+							src = "{$product.cover.bySize.home_default.url}"
 							alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
 							data-full-size-image-url = "{$product.cover.large.url}"
-						><span class="ets_loading">
-{if isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_1'}
-    <div class="spinner_1"></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_2'}
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_3'}
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_4'}
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_5'}
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{/if}
-</span> 
+						> 
 						{if isset($cfg_product_one_img) && $cfg_product_one_img}
 							<span class="product-additional" data-idproduct="{$product.id_product}"></span>
 						{/if}
 					</a>
 				{else}
 					<a href="{$product.canonical_url}" class="thumbnail product-thumbnail">
-				            <img src="{if isset($ets_link_base)}{$ets_link_base}/modules/ets_superspeed/views/img/preloading.png{else}{$urls.no_picture_image.bySize.home_default.url}{/if}" class="lazyload" data-src="{$urls.no_picture_image.bySize.home_default.url}" /><span class="ets_loading">
-{if isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_1'}
-    <div class="spinner_1"></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_2'}
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_3'}
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_4'}
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-{elseif isset($ETS_SPEED_LOADING_IMAGE_TYPE) && $ETS_SPEED_LOADING_IMAGE_TYPE == 'type_5'}
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-{/if}
-</span>
+				            <img src = "{$urls.no_picture_image.bySize.home_default.url}" />
 					    {if isset($cfg_product_one_img) && $cfg_product_one_img}
 					    	<span class="product-additional" data-idproduct="{$product.id_product}"></span>
 					    {/if}

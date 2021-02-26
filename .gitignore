@@ -5,7 +5,6 @@
 /modules/psaddonsconnect/
 /modules/lpexpress/logs/
 /themes/at_kinzy/assets/cache/
-/var/
 *.xml
 *.log
 *.xlsx
