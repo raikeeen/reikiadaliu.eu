@@ -2016,7 +2016,7 @@ class Supercheckout extends Module
         $tmp = $params['order'];
         $this->processOnNewOrder($id_cart, $id_order, $tmp->reference);
         // changes over
-
+        var_dump($params);
        /* $servername = "localhost";
         $username = "Admin";
         $password = "DFfgdde467%$#d";
