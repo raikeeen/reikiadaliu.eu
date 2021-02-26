@@ -83,7 +83,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
      *
      * @var integer
      */
-    public $cache_lifetime = 3600;
+    public $cache_lifetime =0;
 
     /**
      * Array of source information for known template functions
@@ -174,7 +174,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
         $saveVars = true;
         if ($template === null) {
             if (!$this->_isTplObj()) {
-                //throw new SmartyException($function . '():Missing \'$template\' parameter');
+                throw new SmartyException($function . '():Missing \'$template\' parameter');
             } else {
                 $template = $this;
             }
