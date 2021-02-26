@@ -222,7 +222,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
             } else {
                 if ($saveVars) {
                  //   $savedTplVars = $template->tpl_vars;
-                    $savedConfigVars = $template->config_vars;
+                    //$savedConfigVars = $template->config_vars;
                 }
                 ob_start();
                 $template->_mergeVars();
@@ -233,7 +233,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
                 $template->_cleanUp();
                 if ($saveVars) {
                    // $template->tpl_vars = $savedTplVars;
-                    $template->config_vars = $savedConfigVars;
+                    //$template->config_vars = $savedConfigVars;
                 } else {
                     if (!$function && !isset(Smarty_Internal_Template::$tplObjCache[ $template->templateId ])) {
                         $template->parent = null;
