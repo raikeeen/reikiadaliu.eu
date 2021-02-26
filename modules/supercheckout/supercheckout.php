@@ -2017,7 +2017,7 @@ class Supercheckout extends Module
         $this->processOnNewOrder($id_cart, $id_order, $tmp->reference);
         // changes over
 
-        $servername = "localhost";
+       /* $servername = "localhost";
         $username = "Admin";
         $password = "DFfgdde467%$#d";
         $dbname = "reikiadaliu";
@@ -2028,7 +2028,7 @@ class Supercheckout extends Module
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        var_dump($params);
+        var_dump($params);*/
         /*var_dump($order);
         var_dump("1232312312312312312312312");
             var_dump($order->id);
