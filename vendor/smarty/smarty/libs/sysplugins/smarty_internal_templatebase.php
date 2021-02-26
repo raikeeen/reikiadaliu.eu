@@ -193,7 +193,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
             }
         }
         // make sure we have integer values
-        $template->caching = (int)$template->caching;
+       // $template->caching = (int)$template->caching;
         // fetch template content
         $level = ob_get_level();
         try {
