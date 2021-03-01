@@ -83,7 +83,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
      *
      * @var integer
      */
-    public $cache_lifetime = 3600;
+    public $cache_lifetime =0;
 
     /**
      * Array of source information for known template functions
@@ -174,7 +174,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
         $saveVars = true;
         if ($template === null) {
             if (!$this->_isTplObj()) {
-                //throw new SmartyException($function . '():Missing \'$template\' parameter');
+                throw new SmartyException($function . '():Missing \'$template\' parameter');
             } else {
                 $template = $this;
             }
@@ -193,7 +193,7 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
             }
         }
         // make sure we have integer values
-        $template->caching = (int)$template->caching;
+       // $template->caching = (int)$template->caching;
         // fetch template content
         $level = ob_get_level();
         try {
@@ -232,8 +232,8 @@ abstract class Smarty_Internal_TemplateBase extends Smarty_Internal_Data
                 $result = $template->render(false, $function);
                 $template->_cleanUp();
                 if ($saveVars) {
-                    $template->tpl_vars = $savedTplVars;
-                    $template->config_vars = $savedConfigVars;
+                   $template->tpl_vars = $savedTplVars;
+                   $template->config_vars = $savedConfigVars;
                 } else {
                     if (!$function && !isset(Smarty_Internal_Template::$tplObjCache[ $template->templateId ])) {
                         $template->parent = null;
