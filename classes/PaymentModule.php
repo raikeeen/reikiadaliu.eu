@@ -659,7 +659,7 @@ VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
                             '{order_name}' => $order->getUniqReference(),
                             '{date}' => Tools::displayDate(date('Y-m-d H:i:s'), null, 1),
                             '{carrier}' => ($virtual_product || !isset($carrier->name)) ? $this->trans('No carrier', array(), 'Admin.Payment.Notification') : $carrier->name,
-                            '{lp_terminal}' => "dfsdfsdfsd",
+                            //'{lp_terminal1}' => "dfsdfsdfsd",
                             '{payment}' => Tools::substr($order->payment, 0, 255),
                             '{products}' => $product_list_html,
                             '{products_txt}' => $product_list_txt,
