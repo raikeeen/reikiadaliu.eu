@@ -50,7 +50,7 @@
                                                 {/if}
                                                 <span class="supercheckout-shipping-small-title shippingPrice">{$carrier.price nofilter}</span></label>{*escape not required*}
                                             <p class="shippingInfo supercheckout-shipping-small-title">{$carrier.delay}</p>
-                        <div data-carrier-id="{$id_carrier}" style="overflow: hidden;{if $carrier.id|intval == "45"}display: block; {else}display: none;{/if}">{$carrier.extraContent}</div>
+                        <div data-carrier-id="{$id_carrier}" style="overflow: hidden;{if $carrier.id|intval == "45"}display: block; {else}display: none;{/if}">{$carrier.extraContent nofilter}</div>
                     </div>
 
                                     </li>
