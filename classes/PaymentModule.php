@@ -24,7 +24,6 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 use PrestaShop\PrestaShop\Adapter\StockManager;
-require
 
 abstract class PaymentModuleCore extends Module
 {
@@ -571,7 +570,7 @@ abstract class PaymentModuleCore extends Module
 
                     // Order is reloaded because the status just changed
                     $order = new Order((int) $order->id);
-                    //$lp_order = new LPOrder();
+                   // $lp_order = new LPOrder();
                     //$lp_order->loadByOrderID($order->id);
 
                     //Lp express terminal
@@ -659,7 +658,7 @@ VALUES (1500, 1500, 260,0,'terminal',0,1,1,1500)";
                             '{order_name}' => $order->getUniqReference(),
                             '{date}' => Tools::displayDate(date('Y-m-d H:i:s'), null, 1),
                             '{carrier}' => ($virtual_product || !isset($carrier->name)) ? $this->trans('No carrier', array(), 'Admin.Payment.Notification') : $carrier->name,
-                            //'{lp_terminal1}' => "dfsdfsdfsd",
+                            '{lp_terminal}' => "dfsdf",
                             '{payment}' => Tools::substr($order->payment, 0, 255),
                             '{products}' => $product_list_html,
                             '{products_txt}' => $product_list_txt,
