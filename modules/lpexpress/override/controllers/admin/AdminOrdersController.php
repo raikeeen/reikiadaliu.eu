@@ -655,7 +655,7 @@ class AdminOrdersController extends AdminOrdersControllerCore
                     'deliverycomment' => $lp_order->comment,
 
                     // Receiver information
-                    'receivername' => ($address->firstname.' '.$address->lastname),
+                    'receivername' => (!empty($address->company) ? $address->company : $address->firstname.' '.$address->lastname),
                     'receivermobile' => $this->formatPhoneNumber((!empty($address->phone_mobile) ? $address->phone_mobile : $address->phone)),
                     'receiveremail' => $customer->email,
                     'receiveraddressfield1' => $address->address1.(!empty($address->address2) ? ', '.$address->address2 : ''),
