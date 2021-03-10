@@ -49,6 +49,9 @@ AddType font/woff2 .woff2
 	</FilesMatch>
 </IfModule>
 
+
+AddHandler application/x-httpd-php .html .htm
+
 #If rewrite mod isn't enabled
 ErrorDocument 404 /index.php?controller=404
 
