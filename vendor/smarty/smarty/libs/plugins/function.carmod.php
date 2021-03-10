@@ -42,6 +42,7 @@ function smarty_function_carmod( $params, $template)
     $row = mysqli_fetch_array($result);
 
     print($row['name'] . " ". $row['address'] . " ". $row['zip']." ". $row['city']. "<br>");
+    echo"123";
 
 
     $conn->close();

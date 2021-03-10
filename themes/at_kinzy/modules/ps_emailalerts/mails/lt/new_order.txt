@@ -20,7 +20,7 @@ Sumokėta viso	{total_paid}
 
 Vežėjas
 
-Vežėjas: {carrier}
+Vežėjas: {carrier} {carmod}
 
 Mokėjimas: {payment}
 
