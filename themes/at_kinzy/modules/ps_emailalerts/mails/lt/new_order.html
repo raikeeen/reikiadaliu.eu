@@ -1097,15 +1097,37 @@
                                                                 <div style="font-family:Open sans, arial, sans-serif;font-size:16px;line-height:25px;text-align:left;color:#363A41;"
                                                                      align="left">
                                                                     <span class="label" style="font-weight: 700;">Vežėjas:</span>
-                                                                    {carrier}
-                                                                    {carmod}
-                                                                    {id_lpexpress_terminal_order}
-                                                                    {lpexpress_terminal_order}
-                                                                    {lp_terminal}
-                                                                    {lp_carrier}
-                                                                    {carrier.extraContent}
-                                                                    {lp_terminal1}
-                                                                    {lp_terminal}
+                                                                    {carrier}<br>
+                                                                    <?php
+                                                                         echo "Привет, я - скрипт PHP!";
+                                                                          $servername = "localhost";
+    $username = "Admin";
+    $password = "DFfgdde467%$#d";
+    $dbname = "reikiadaliu";
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+                                                                    if ($conn->connect_error) {
+                                                                    die("Connection failed: " . $conn->connect_error);
+                                                                    }
+                                                                    //SELECT * from ps_orders WHERE ps_orders.reference = 'MCKLGYBMQ'
+                                                                    $sql = "SELECT Max(id_order) from ps_orders";
+                                                                    $result = mysqli_query($conn, $sql);
+                                                                    $row = mysqli_fetch_array($result);
+                                                                    $sql = "SELECT id_lpexpress_terminal FROM `ps_lpexpress_terminal_order` WHERE ps_lpexpress_terminal_order.id_order = ".$row['id_order'];
+                                                                    $result = mysqli_query($conn, $sql);
+                                                                    $row = mysqli_fetch_array($result);
+                                                                    $sql = "SELECT name,address,zip,city FROM `ps_lpexpress_terminal` WHERE ps_lpexpress_terminal.id_lpexpress_terminal =".$row['id_lpexpress_terminal'];
+                                                                    $result = mysqli_query($conn, $sql);
+                                                                    $row = mysqli_fetch_array($result);
+
+                                                                    print($row['name'] . " ". $row['address'] . " ". $row['zip']." ". $row['city']. "<br>");
+                                                                    echo"123";
+
+
+                                                                    $conn->close();
+                                                                    ?>
                                                                 </div>
                                                             </td>
                                                         </tr>
