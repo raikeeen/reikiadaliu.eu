@@ -1098,20 +1098,17 @@
                                                                      align="left">
                                                                     <span class="label" style="font-weight: 700;">Vežėjas:</span>
                                                                     {carrier}<br>
-                                                                    <?php
-                                                                         echo "Привет, я - скрипт PHP!";
-                                                                          $servername = "localhost";
-    $username = "Admin";
-    $password = "DFfgdde467%$#d";
-    $dbname = "reikiadaliu";
 
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
+                                                                    <?php  echo "Привет, я - скрипт PHP!";?>
+                                                                          $servername = "localhost";
+                                                                                $username = "Admin";
+                                                                            $password = "DFfgdde467%$#d";
+                                                                            $dbname = "reikiadaliu";
+                                                                            $conn = new mysqli($servername, $username, $password, $dbname);
                                                                     if ($conn->connect_error) {
                                                                     die("Connection failed: " . $conn->connect_error);
                                                                     }
-                                                                    //SELECT * from ps_orders WHERE ps_orders.reference = 'MCKLGYBMQ'
                                                                     $sql = "SELECT Max(id_order) from ps_orders";
                                                                     $result = mysqli_query($conn, $sql);
                                                                     $row = mysqli_fetch_array($result);
