@@ -478,12 +478,12 @@ class Ps_EmailAlerts extends Module
 
             $dir_mail = false;
             if (file_exists(dirname(__FILE__).'/mails/'.$mail_iso.'/new_order.txt') &&
-                file_exists(dirname(__FILE__).'/mails/'.$mail_iso.'/new_order.php')) {
+                file_exists(dirname(__FILE__).'/mails/'.$mail_iso.'/new_order.html')) {
                 $dir_mail = dirname(__FILE__).'/mails/';
             }
 
             if (file_exists(_PS_MAIL_DIR_.$mail_iso.'/new_order.txt') &&
-                file_exists(_PS_MAIL_DIR_.$mail_iso.'/new_order.php')) {
+                file_exists(_PS_MAIL_DIR_.$mail_iso.'/new_order.html')) {
                 $dir_mail = _PS_MAIL_DIR_;
             }
 
