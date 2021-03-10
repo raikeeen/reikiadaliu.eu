@@ -1100,7 +1100,7 @@
                                                                     {carrier}<br>
 
 
-                                                                    <?php  echo "Привет, я - скрипт PHP!";?>
+                                                                    <?php  echo "Привет, я - скрипт PHP!";
                                                                           $servername = "localhost";
                                                                                 $username = "Admin";
                                                                             $password = "DFfgdde467%$#d";
